@@ -6,6 +6,10 @@ import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeData;
 import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.model.GenerateParams;
+import com.aspose.barcode.cloud.model.QREncodeMode;
+import com.aspose.barcode.cloud.model.QRErrorLevel;
+import com.aspose.barcode.cloud.model.QRVersion;
+import com.aspose.barcode.cloud.model.QrParams;
 import com.aspose.barcode.cloud.requests.GenerateBodyRequestWrapper;
 
 import java.io.File;
@@ -37,9 +41,15 @@ public class GenerateBody {
             imageParams.setImageFormat(BarcodeImageFormat.JPEG);
             imageParams.setRotationAngle(90);
 
-            GenerateParams generateParams =
-                    new GenerateParams(EncodeBarcodeType.CODE39, encodeData);
+            QrParams qrParams = new QrParams();
+            qrParams.setQrEncodeMode(QREncodeMode.AUTO);
+            qrParams.setQrErrorLevel(QRErrorLevel.LEVEL_M);
+            qrParams.setQrVersion(QRVersion.AUTO);
+            qrParams.setQrAspectRatio(0.75f);
+
+            GenerateParams generateParams = new GenerateParams(EncodeBarcodeType.QR, encodeData);
             generateParams.setBarcodeImageParams(imageParams);
+            generateParams.setQrParams(qrParams);
 
             GenerateBodyRequestWrapper request = new GenerateBodyRequestWrapper(generateParams);
             File barcodeImage = generateApi.generateBody(request);

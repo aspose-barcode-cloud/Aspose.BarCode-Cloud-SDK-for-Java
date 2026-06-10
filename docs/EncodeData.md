@@ -2,14 +2,14 @@
 
 # EncodeData
 
-Data to encode in barcode
+Data to encode in a barcode.
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**dataType** | **EncodeDataType** |  |  [optional] |
-|**data** | **String** | String represents data to encode |  |
+|**data** | **String** | String that represents the data to encode. |  |
 
 
 

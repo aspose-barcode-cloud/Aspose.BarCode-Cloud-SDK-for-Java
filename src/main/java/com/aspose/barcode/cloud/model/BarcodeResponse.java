@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import java.util.Objects;
 
-/** Represents information about barcode. */
+/** Represents information about a barcode. */
 public class BarcodeResponse {
     @SerializedName(value = "barcodeValue")
     private String barcodeValue;
@@ -46,7 +46,7 @@ public class BarcodeResponse {
     }
 
     /**
-     * Region with barcode.
+     * Region with the barcode.
      *
      * @return region
      */
@@ -59,7 +59,7 @@ public class BarcodeResponse {
     }
 
     /**
-     * Checksum of barcode.
+     * Checksum of the barcode.
      *
      * @return checksum
      */

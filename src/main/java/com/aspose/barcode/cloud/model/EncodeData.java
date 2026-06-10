@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
 
-/** Data to encode in barcode */
+/** Data to encode in a barcode. */
 public class EncodeData {
     @SerializedName(value = "dataType")
     private EncodeDataType dataType;
@@ -15,7 +15,7 @@ public class EncodeData {
     /**
      * .
      *
-     * @param data String represents data to encode
+     * @param data String that represents the data to encode.
      */
     public EncodeData(String data) {
         this.data = data;
@@ -35,7 +35,7 @@ public class EncodeData {
     }
 
     /**
-     * String represents data to encode
+     * String that represents the data to encode.
      *
      * @return data
      */

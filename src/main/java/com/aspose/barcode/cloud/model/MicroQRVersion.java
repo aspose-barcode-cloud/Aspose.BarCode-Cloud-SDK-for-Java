@@ -7,18 +7,25 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** EncodeDataType. Types of data that can be encoded into a barcode. */
-@JsonAdapter(EncodeDataType.Adapter.class)
-public enum EncodeDataType {
-    STRING_DATA("StringData"),
+/**
+ * MicroQRVersion. MicroQR barcode version. Mirrors
+ * https://reference.aspose.com/barcode/net/aspose.barcode.generation/microqrversion/
+ */
+@JsonAdapter(MicroQRVersion.Adapter.class)
+public enum MicroQRVersion {
+    AUTO("Auto"),
 
-    BASE64_BYTES("Base64Bytes"),
+    M1("M1"),
 
-    HEX_BYTES("HexBytes");
+    M2("M2"),
+
+    M3("M3"),
+
+    M4("M4");
 
     private final String value;
 
-    EncodeDataType(String value) {
+    MicroQRVersion(String value) {
         this.value = value;
     }
 
@@ -31,9 +38,9 @@ public enum EncodeDataType {
         return String.valueOf(value);
     }
 
-    /** Create EncodeDataType from String. */
-    public static EncodeDataType fromValue(String text) {
-        for (EncodeDataType b : EncodeDataType.values()) {
+    /** Create MicroQRVersion from String. */
+    public static MicroQRVersion fromValue(String text) {
+        for (MicroQRVersion b : MicroQRVersion.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -42,17 +49,17 @@ public enum EncodeDataType {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<EncodeDataType> {
+    public static class Adapter extends TypeAdapter<MicroQRVersion> {
         @Override
-        public void write(final JsonWriter jsonWriter, final EncodeDataType enumeration)
+        public void write(final JsonWriter jsonWriter, final MicroQRVersion enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public EncodeDataType read(final JsonReader jsonReader) throws IOException {
+        public MicroQRVersion read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return EncodeDataType.fromValue(String.valueOf(value));
+            return MicroQRVersion.fromValue(String.valueOf(value));
         }
     }
 }

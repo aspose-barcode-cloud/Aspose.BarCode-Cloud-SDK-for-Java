@@ -25,15 +25,20 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.*;
 import com.aspose.barcode.cloud.model.GenerateParams;
 
-/** Generate barcode using POST request with parameters in body in json or xml format. */
+/**
+ * Generate a barcode using a POST request with parameters in the request body in JSON or XML
+ * format.
+ */
 public class GenerateBodyRequestWrapper {
     /** . */
     public final GenerateParams generateParams;
 
     /**
-     * Generate barcode using POST request with parameters in body in json or xml format..
+     * Generate a barcode using a POST request with parameters in the request body in JSON or XML
+     * format..
      *
      * @param generateParams Param of type GenerateParams
      */

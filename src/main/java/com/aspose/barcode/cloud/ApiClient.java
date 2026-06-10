@@ -40,7 +40,7 @@ import java.util.regex.Pattern;
 /** ApiClient. */
 public class ApiClient {
     public final String apiVersion = "v4.0";
-    public final String clientVersion = "26.5.0";
+    public final String clientVersion = "26.6.0";
 
     private String baseUrl = "https://api.aspose.cloud";
     private String tokenUrl = "https://id.aspose.cloud/connect/token";
@@ -88,7 +88,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenApi-Generator/26.5.0/java");
+        setUserAgent("OpenApi-Generator/26.6.0/java");
 
         addDefaultHeader("x-aspose-client", "java sdk");
         addDefaultHeader("x-aspose-client-version", clientVersion);

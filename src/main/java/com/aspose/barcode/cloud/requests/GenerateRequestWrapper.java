@@ -25,78 +25,141 @@
 
 package com.aspose.barcode.cloud.requests;
 
+import com.aspose.barcode.cloud.model.*;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
 import com.aspose.barcode.cloud.model.GraphicsUnit;
 
-/** Generate barcode using GET request with parameters in route and query string. */
+/** Generate a barcode using a GET request with parameters in the route and query string. */
 public class GenerateRequestWrapper {
     /** Type of barcode to generate.. */
     public final EncodeBarcodeType barcodeType;
 
-    /** String represents data to encode. */
+    /** String that represents the data to encode.. */
     public final String data;
 
     /** Type of data to encode. Default value: StringData.. */
     public EncodeDataType dataType;
 
-    /** Barcode output image format. Default value: png. */
+    /** Barcode output image format. Default value: png.. */
     public BarcodeImageFormat imageFormat;
 
     /**
-     * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default
-     * value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D
-     * Barcodes..
+     * Specify the displayed text location. Set to CodeLocation.None to hide CodeText. Default value
+     * depends on BarcodeType: CodeLocation.Below for 1D barcodes and CodeLocation.None for 2D
+     * barcodes..
      */
     public CodeLocation textLocation;
 
     /**
-     * Specify the displaying bars and content Color. Value: Color name from
-     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.
-     * For example: AliceBlue or #FF000000 Default value: Black..
+     * Specify the display color for bars and content. Value: Color name from
+     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value starting with #.
+     * For example: AliceBlue or #FF000000. Default value: Black..
      */
     public String foregroundColor = "Black";
 
     /**
      * Background color of the barcode image. Value: Color name from
-     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.
-     * For example: AliceBlue or #FF000000 Default value: White..
+     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value starting with #.
+     * For example: AliceBlue or #FF000000. Default value: White..
      */
     public String backgroundColor = "White";
 
-    /** Common Units for all measuring in query. Default units: pixel.. */
+    /** Common units for all measurements. Default units: pixels.. */
     public GraphicsUnit units;
 
     /**
-     * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
-     * Decimal separator is dot..
+     * Resolution of the barcode image. One value for both dimensions. Default value: 96 dpi.
+     * Decimal separator is a dot..
      */
     public Float resolution;
 
     /**
-     * Height of the barcode image in given units. Default units: pixel. Decimal separator is dot..
+     * Height of the barcode image in the specified units. Default units: pixels. Decimal separator
+     * is a dot..
      */
     public Float imageHeight;
 
     /**
-     * Width of the barcode image in given units. Default units: pixel. Decimal separator is dot..
+     * Width of the barcode image in the specified units. Default units: pixels. Decimal separator
+     * is a dot..
      */
     public Float imageWidth;
 
     /**
-     * BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle =
-     * 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the
-     * difficulty for the scanner to read the image. Default value: 0..
+     * Barcode image rotation angle, measured in degrees. For example, RotationAngle = 0 or
+     * RotationAngle = 360 means no rotation. If RotationAngle is not equal to 90, 180, 270, or 0,
+     * it may increase the difficulty for the scanner to read the image. Default value: 0..
      */
     public Integer rotationAngle;
 
+    /** QR barcode encode mode.. */
+    public QREncodeMode qrEncodeMode;
+
+    /** QR barcode error correction level.. */
+    public QRErrorLevel qrErrorLevel;
+
+    /** QR barcode version. Automatically selects the smallest version that fits the data.. */
+    public QRVersion qrVersion;
+
+    /** ECI encoding for QR barcode data.. */
+    public ECIEncodings qrECIEncoding;
+
+    /** QR barcode aspect ratio. Values: 0 to 1.. */
+    public Float qrAspectRatio;
+
+    /** MicroQR barcode version. Used when BarcodeType is MicroQR.. */
+    public MicroQRVersion microQRVersion;
+
+    /** RectMicroQR barcode version. Used when BarcodeType is RectMicroQR.. */
+    public RectMicroQRVersion rectMicroQrVersion;
+
+    /** Code128 barcode encode mode. Controls which Code 128 subset (A, B, C, or mix) is used.. */
+    public Code128EncodeMode code128EncodeMode;
+
+    /** PDF417 barcode encode mode.. */
+    public Pdf417EncodeMode pdf417EncodeMode;
+
+    /** PDF417 barcode error correction level.. */
+    public Pdf417ErrorLevel pdf417ErrorLevel;
+
+    /** Whether to use truncated PDF417 format (removes right-side stop pattern).. */
+    public Boolean pdf417Truncate;
+
+    /** Number of columns in the PDF417 barcode. Values between 1 and 30. 0 for auto.. */
+    public Integer pdf417Columns;
+
+    /** Number of rows in the PDF417 barcode. Values between 3 and 90. 0 for automatic.. */
+    public Integer pdf417Rows;
+
     /**
-     * Generate barcode using GET request with parameters in route and query string..
+     * PDF417 barcode aspect ratio (height/width of the barcode module). Values are defined by the
+     * standard: 2 to 5 for MicroPdf417; 3 to 5 for Pdf417 and MacroPdf417..
+     */
+    public Float pdf417AspectRatio;
+
+    /** ECI encoding for PDF417 barcode data.. */
+    public ECIEncodings pdf417ECIEncoding;
+
+    /** Whether the barcode is used for reader initialization (programming).. */
+    public Boolean pdf417IsReaderInitialization;
+
+    /** Macro character to prepend (structured append).. */
+    public MacroCharacter pdf417MacroCharacters;
+
+    /** Whether to use linked mode (for MicroPdf417).. */
+    public Boolean pdf417IsLinked;
+
+    /** Whether to use Code128 emulation for MicroPdf417.. */
+    public Boolean pdf417IsCode128Emulation;
+
+    /**
+     * Generate a barcode using a GET request with parameters in the route and query string..
      *
      * @param barcodeType Type of barcode to generate.
-     * @param data String represents data to encode
+     * @param data String that represents the data to encode.
      */
     public GenerateRequestWrapper(EncodeBarcodeType barcodeType, String data) {
         this.barcodeType = barcodeType;

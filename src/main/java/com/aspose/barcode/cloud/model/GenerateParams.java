@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
 
-/** Barcode generation parameters */
+/** Barcode generation parameters. */
 public class GenerateParams {
     @SerializedName(value = "barcodeType")
     private EncodeBarcodeType barcodeType;
@@ -14,6 +14,15 @@ public class GenerateParams {
 
     @SerializedName(value = "barcodeImageParams")
     private BarcodeImageParams barcodeImageParams;
+
+    @SerializedName(value = "qrParams")
+    private QrParams qrParams;
+
+    @SerializedName(value = "code128Params")
+    private Code128Params code128Params;
+
+    @SerializedName(value = "pdf417Params")
+    private Pdf417Params pdf417Params;
 
     /**
      * .
@@ -65,6 +74,45 @@ public class GenerateParams {
         this.barcodeImageParams = barcodeImageParams;
     }
 
+    /**
+     * Get qrParams
+     *
+     * @return qrParams
+     */
+    public QrParams getQrParams() {
+        return qrParams;
+    }
+
+    public void setQrParams(QrParams qrParams) {
+        this.qrParams = qrParams;
+    }
+
+    /**
+     * Get code128Params
+     *
+     * @return code128Params
+     */
+    public Code128Params getCode128Params() {
+        return code128Params;
+    }
+
+    public void setCode128Params(Code128Params code128Params) {
+        this.code128Params = code128Params;
+    }
+
+    /**
+     * Get pdf417Params
+     *
+     * @return pdf417Params
+     */
+    public Pdf417Params getPdf417Params() {
+        return pdf417Params;
+    }
+
+    public void setPdf417Params(Pdf417Params pdf417Params) {
+        this.pdf417Params = pdf417Params;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -76,12 +124,16 @@ public class GenerateParams {
         GenerateParams generateParams = (GenerateParams) o;
         return Objects.equals(this.barcodeType, generateParams.barcodeType)
                 && Objects.equals(this.encodeData, generateParams.encodeData)
-                && Objects.equals(this.barcodeImageParams, generateParams.barcodeImageParams);
+                && Objects.equals(this.barcodeImageParams, generateParams.barcodeImageParams)
+                && Objects.equals(this.qrParams, generateParams.qrParams)
+                && Objects.equals(this.code128Params, generateParams.code128Params)
+                && Objects.equals(this.pdf417Params, generateParams.pdf417Params);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(barcodeType, encodeData, barcodeImageParams);
+        return Objects.hash(
+                barcodeType, encodeData, barcodeImageParams, qrParams, code128Params, pdf417Params);
     }
 
     @Override
@@ -94,6 +146,9 @@ public class GenerateParams {
         sb.append("    barcodeImageParams: ")
                 .append(toIndentedString(barcodeImageParams))
                 .append("\n");
+        sb.append("    qrParams: ").append(toIndentedString(qrParams)).append("\n");
+        sb.append("    code128Params: ").append(toIndentedString(code128Params)).append("\n");
+        sb.append("    pdf417Params: ").append(toIndentedString(pdf417Params)).append("\n");
         sb.append("}");
         return sb.toString();
     }

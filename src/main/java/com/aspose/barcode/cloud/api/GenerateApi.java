@@ -121,6 +121,94 @@ public class GenerateApi {
             queryParams.addAll(apiClient.parameterToPair("rotationAngle", request.rotationAngle));
         }
 
+        if (request.qrEncodeMode != null) {
+            queryParams.addAll(apiClient.parameterToPair("qrEncodeMode", request.qrEncodeMode));
+        }
+
+        if (request.qrErrorLevel != null) {
+            queryParams.addAll(apiClient.parameterToPair("qrErrorLevel", request.qrErrorLevel));
+        }
+
+        if (request.qrVersion != null) {
+            queryParams.addAll(apiClient.parameterToPair("qrVersion", request.qrVersion));
+        }
+
+        if (request.qrECIEncoding != null) {
+            queryParams.addAll(apiClient.parameterToPair("qrECIEncoding", request.qrECIEncoding));
+        }
+
+        if (request.qrAspectRatio != null) {
+            queryParams.addAll(apiClient.parameterToPair("qrAspectRatio", request.qrAspectRatio));
+        }
+
+        if (request.microQRVersion != null) {
+            queryParams.addAll(apiClient.parameterToPair("microQRVersion", request.microQRVersion));
+        }
+
+        if (request.rectMicroQrVersion != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("rectMicroQrVersion", request.rectMicroQrVersion));
+        }
+
+        if (request.code128EncodeMode != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("code128EncodeMode", request.code128EncodeMode));
+        }
+
+        if (request.pdf417EncodeMode != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("pdf417EncodeMode", request.pdf417EncodeMode));
+        }
+
+        if (request.pdf417ErrorLevel != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("pdf417ErrorLevel", request.pdf417ErrorLevel));
+        }
+
+        if (request.pdf417Truncate != null) {
+            queryParams.addAll(apiClient.parameterToPair("pdf417Truncate", request.pdf417Truncate));
+        }
+
+        if (request.pdf417Columns != null) {
+            queryParams.addAll(apiClient.parameterToPair("pdf417Columns", request.pdf417Columns));
+        }
+
+        if (request.pdf417Rows != null) {
+            queryParams.addAll(apiClient.parameterToPair("pdf417Rows", request.pdf417Rows));
+        }
+
+        if (request.pdf417AspectRatio != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("pdf417AspectRatio", request.pdf417AspectRatio));
+        }
+
+        if (request.pdf417ECIEncoding != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("pdf417ECIEncoding", request.pdf417ECIEncoding));
+        }
+
+        if (request.pdf417IsReaderInitialization != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417IsReaderInitialization", request.pdf417IsReaderInitialization));
+        }
+
+        if (request.pdf417MacroCharacters != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417MacroCharacters", request.pdf417MacroCharacters));
+        }
+
+        if (request.pdf417IsLinked != null) {
+            queryParams.addAll(apiClient.parameterToPair("pdf417IsLinked", request.pdf417IsLinked));
+        }
+
+        if (request.pdf417IsCode128Emulation != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417IsCode128Emulation", request.pdf417IsCode128Emulation));
+        }
+
         Map<String, String> headerParams = new HashMap<>();
 
         Map<String, Object> formParams = new HashMap<>();
@@ -202,7 +290,7 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using GET request with parameters in route and query string.
+     * Generate a barcode using a GET request with parameters in the route and query string.
      *
      * @param request See {@link GenerateRequestWrapper}
      * @return File
@@ -215,7 +303,7 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using GET request with parameters in route and query string.
+     * Generate a barcode using a GET request with parameters in the route and query string.
      *
      * @param request See {@link GenerateRequestWrapper}
      * @return ApiResponse&lt;File&gt;
@@ -230,7 +318,7 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using GET request with parameters in route and query string.
+     * Generate a barcode using a GET request with parameters in the route and query string.
      * (asynchronously)
      *
      * @param request See {@link GenerateRequestWrapper}
@@ -366,7 +454,8 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using POST request with parameters in body in json or xml format.
+     * Generate a barcode using a POST request with parameters in the request body in JSON or XML
+     * format.
      *
      * @param request See {@link GenerateBodyRequestWrapper}
      * @return File
@@ -379,7 +468,8 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using POST request with parameters in body in json or xml format.
+     * Generate a barcode using a POST request with parameters in the request body in JSON or XML
+     * format.
      *
      * @param request See {@link GenerateBodyRequestWrapper}
      * @return ApiResponse&lt;File&gt;
@@ -394,8 +484,8 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using POST request with parameters in body in json or xml format.
-     * (asynchronously)
+     * Generate a barcode using a POST request with parameters in the request body in JSON or XML
+     * format. (asynchronously)
      *
      * @param request See {@link GenerateBodyRequestWrapper}
      * @param callback The callback to be executed when the API call finishes
@@ -509,6 +599,82 @@ public class GenerateApi {
             formParams.put("rotationAngle", request.rotationAngle);
         }
 
+        if (request.qrEncodeMode != null) {
+            formParams.put("qrEncodeMode", request.qrEncodeMode);
+        }
+
+        if (request.qrErrorLevel != null) {
+            formParams.put("qrErrorLevel", request.qrErrorLevel);
+        }
+
+        if (request.qrVersion != null) {
+            formParams.put("qrVersion", request.qrVersion);
+        }
+
+        if (request.qrECIEncoding != null) {
+            formParams.put("qrECIEncoding", request.qrECIEncoding);
+        }
+
+        if (request.qrAspectRatio != null) {
+            formParams.put("qrAspectRatio", request.qrAspectRatio);
+        }
+
+        if (request.microQRVersion != null) {
+            formParams.put("microQRVersion", request.microQRVersion);
+        }
+
+        if (request.rectMicroQrVersion != null) {
+            formParams.put("rectMicroQrVersion", request.rectMicroQrVersion);
+        }
+
+        if (request.code128EncodeMode != null) {
+            formParams.put("code128EncodeMode", request.code128EncodeMode);
+        }
+
+        if (request.pdf417EncodeMode != null) {
+            formParams.put("pdf417EncodeMode", request.pdf417EncodeMode);
+        }
+
+        if (request.pdf417ErrorLevel != null) {
+            formParams.put("pdf417ErrorLevel", request.pdf417ErrorLevel);
+        }
+
+        if (request.pdf417Truncate != null) {
+            formParams.put("pdf417Truncate", request.pdf417Truncate);
+        }
+
+        if (request.pdf417Columns != null) {
+            formParams.put("pdf417Columns", request.pdf417Columns);
+        }
+
+        if (request.pdf417Rows != null) {
+            formParams.put("pdf417Rows", request.pdf417Rows);
+        }
+
+        if (request.pdf417AspectRatio != null) {
+            formParams.put("pdf417AspectRatio", request.pdf417AspectRatio);
+        }
+
+        if (request.pdf417ECIEncoding != null) {
+            formParams.put("pdf417ECIEncoding", request.pdf417ECIEncoding);
+        }
+
+        if (request.pdf417IsReaderInitialization != null) {
+            formParams.put("pdf417IsReaderInitialization", request.pdf417IsReaderInitialization);
+        }
+
+        if (request.pdf417MacroCharacters != null) {
+            formParams.put("pdf417MacroCharacters", request.pdf417MacroCharacters);
+        }
+
+        if (request.pdf417IsLinked != null) {
+            formParams.put("pdf417IsLinked", request.pdf417IsLinked);
+        }
+
+        if (request.pdf417IsCode128Emulation != null) {
+            formParams.put("pdf417IsCode128Emulation", request.pdf417IsCode128Emulation);
+        }
+
         final String[] accepts = {
             "image/png",
             "image/bmp",
@@ -587,7 +753,7 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using POST request with parameters in multipart form.
+     * Generate a barcode using a POST request with parameters in a multipart form.
      *
      * @param request See {@link GenerateMultipartRequestWrapper}
      * @return File
@@ -600,7 +766,7 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using POST request with parameters in multipart form.
+     * Generate a barcode using a POST request with parameters in a multipart form.
      *
      * @param request See {@link GenerateMultipartRequestWrapper}
      * @return ApiResponse&lt;File&gt;
@@ -615,7 +781,7 @@ public class GenerateApi {
     }
 
     /**
-     * Generate barcode using POST request with parameters in multipart form. (asynchronously)
+     * Generate a barcode using a POST request with parameters in a multipart form. (asynchronously)
      *
      * @param request See {@link GenerateMultipartRequestWrapper}
      * @param callback The callback to be executed when the API call finishes

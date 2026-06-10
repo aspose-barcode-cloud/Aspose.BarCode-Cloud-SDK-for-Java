@@ -141,8 +141,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file on server in the Internet using GET requests with parameter in query
-     * string. For scaning files from your hard drive use &#x60;scan-body&#x60; or
+     * Scan a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For scanning files from your hard drive, use &#x60;scan-body&#x60; or
      * &#x60;scan-multipart&#x60; endpoints instead.
      *
      * @param request See {@link ScanRequestWrapper}
@@ -156,8 +156,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file on server in the Internet using GET requests with parameter in query
-     * string. For scaning files from your hard drive use &#x60;scan-body&#x60; or
+     * Scan a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For scanning files from your hard drive, use &#x60;scan-body&#x60; or
      * &#x60;scan-multipart&#x60; endpoints instead.
      *
      * @param request See {@link ScanRequestWrapper}
@@ -173,8 +173,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file on server in the Internet using GET requests with parameter in query
-     * string. For scaning files from your hard drive use &#x60;scan-body&#x60; or
+     * Scan a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For scanning files from your hard drive, use &#x60;scan-body&#x60; or
      * &#x60;scan-multipart&#x60; endpoints instead. (asynchronously)
      *
      * @param request See {@link ScanRequestWrapper}
@@ -302,8 +302,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in body in json or
-     * xml format.
+     * Scan a barcode from a file in the request body using a POST request with a JSON or XML body
+     * parameter.
      *
      * @param request See {@link ScanBase64RequestWrapper}
      * @return BarcodeResponseList
@@ -316,8 +316,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in body in json or
-     * xml format.
+     * Scan a barcode from a file in the request body using a POST request with a JSON or XML body
+     * parameter.
      *
      * @param request See {@link ScanBase64RequestWrapper}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -332,8 +332,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in body in json or
-     * xml format. (asynchronously)
+     * Scan a barcode from a file in the request body using a POST request with a JSON or XML body
+     * parameter. (asynchronously)
      *
      * @param request See {@link ScanBase64RequestWrapper}
      * @param callback The callback to be executed when the API call finishes
@@ -464,7 +464,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
+     * Scan a barcode from a file in the request body using a POST request with a multipart form
+     * parameter.
      *
      * @param request See {@link ScanMultipartRequestWrapper}
      * @return BarcodeResponseList
@@ -478,7 +479,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
+     * Scan a barcode from a file in the request body using a POST request with a multipart form
+     * parameter.
      *
      * @param request See {@link ScanMultipartRequestWrapper}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -493,8 +495,8 @@ public class ScanApi {
     }
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in multipart form.
-     * (asynchronously)
+     * Scan a barcode from a file in the request body using a POST request with a multipart form
+     * parameter. (asynchronously)
      *
      * @param request See {@link ScanMultipartRequestWrapper}
      * @param callback The callback to be executed when the API call finishes

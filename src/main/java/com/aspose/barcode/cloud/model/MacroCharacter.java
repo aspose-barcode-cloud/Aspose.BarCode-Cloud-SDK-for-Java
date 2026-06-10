@@ -7,18 +7,21 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** EncodeDataType. Types of data that can be encoded into a barcode. */
-@JsonAdapter(EncodeDataType.Adapter.class)
-public enum EncodeDataType {
-    STRING_DATA("StringData"),
+/**
+ * MacroCharacter. PDF417 macro character mode. Mirrors
+ * https://reference.aspose.com/barcode/net/aspose.barcode.generation/macrocharacter/
+ */
+@JsonAdapter(MacroCharacter.Adapter.class)
+public enum MacroCharacter {
+    NONE("None"),
 
-    BASE64_BYTES("Base64Bytes"),
+    MACRO05("Macro05"),
 
-    HEX_BYTES("HexBytes");
+    MACRO06("Macro06");
 
     private final String value;
 
-    EncodeDataType(String value) {
+    MacroCharacter(String value) {
         this.value = value;
     }
 
@@ -31,9 +34,9 @@ public enum EncodeDataType {
         return String.valueOf(value);
     }
 
-    /** Create EncodeDataType from String. */
-    public static EncodeDataType fromValue(String text) {
-        for (EncodeDataType b : EncodeDataType.values()) {
+    /** Create MacroCharacter from String. */
+    public static MacroCharacter fromValue(String text) {
+        for (MacroCharacter b : MacroCharacter.values()) {
             if (String.valueOf(b.value).equals(text)) {
                 return b;
             }
@@ -42,17 +45,17 @@ public enum EncodeDataType {
     }
 
     /** Class for JsonAdapter. */
-    public static class Adapter extends TypeAdapter<EncodeDataType> {
+    public static class Adapter extends TypeAdapter<MacroCharacter> {
         @Override
-        public void write(final JsonWriter jsonWriter, final EncodeDataType enumeration)
+        public void write(final JsonWriter jsonWriter, final MacroCharacter enumeration)
                 throws IOException {
             jsonWriter.value(enumeration.getValue());
         }
 
         @Override
-        public EncodeDataType read(final JsonReader jsonReader) throws IOException {
+        public MacroCharacter read(final JsonReader jsonReader) throws IOException {
             String value = jsonReader.nextString();
-            return EncodeDataType.fromValue(String.valueOf(value));
+            return MacroCharacter.fromValue(String.valueOf(value));
         }
     }
 }
