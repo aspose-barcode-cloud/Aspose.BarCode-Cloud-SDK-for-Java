@@ -25,7 +25,20 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.*;
+import com.aspose.barcode.cloud.model.Code128EncodeMode;
+import com.aspose.barcode.cloud.model.Code128Params;
+import com.aspose.barcode.cloud.model.ECIEncodings;
+import com.aspose.barcode.cloud.model.MacroCharacter;
+import com.aspose.barcode.cloud.model.MicroQRVersion;
+import com.aspose.barcode.cloud.model.Pdf417EncodeMode;
+import com.aspose.barcode.cloud.model.Pdf417ErrorLevel;
+import com.aspose.barcode.cloud.model.Pdf417Params;
+import com.aspose.barcode.cloud.model.QREncodeMode;
+import com.aspose.barcode.cloud.model.QRErrorLevel;
+import com.aspose.barcode.cloud.model.QRVersion;
+import com.aspose.barcode.cloud.model.QrParams;
+import com.aspose.barcode.cloud.model.RectMicroQRVersion;
+
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
