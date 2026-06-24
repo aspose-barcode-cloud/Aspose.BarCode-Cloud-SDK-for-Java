@@ -43,7 +43,7 @@ public class Pdf417Params {
     private Boolean pdf417IsCode128Emulation;
 
     /**
-     * Get pdf417EncodeMode
+     * PDF417 barcode encode mode.
      *
      * @return pdf417EncodeMode
      */
@@ -56,7 +56,7 @@ public class Pdf417Params {
     }
 
     /**
-     * Get pdf417ErrorLevel
+     * PDF417 barcode error correction level.
      *
      * @return pdf417ErrorLevel
      */
@@ -124,7 +124,7 @@ public class Pdf417Params {
     }
 
     /**
-     * Get pdf417ECIEncoding
+     * ECI encoding for PDF417 barcode data.
      *
      * @return pdf417ECIEncoding
      */
@@ -150,7 +150,7 @@ public class Pdf417Params {
     }
 
     /**
-     * Get pdf417MacroCharacters
+     * Macro character to prepend (structured append).
      *
      * @return pdf417MacroCharacters
      */

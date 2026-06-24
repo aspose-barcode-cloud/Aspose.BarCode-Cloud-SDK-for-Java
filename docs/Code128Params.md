@@ -8,7 +8,7 @@ Optional Code128 barcode generation parameters.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**code128EncodeMode** | **Code128EncodeMode** |  |  [optional] |
+|**code128EncodeMode** | **Code128EncodeMode** | Code128 barcode encode mode. Controls which Code 128 subset (A, B, C, or mix) is used. |  [optional] |
 
 
 

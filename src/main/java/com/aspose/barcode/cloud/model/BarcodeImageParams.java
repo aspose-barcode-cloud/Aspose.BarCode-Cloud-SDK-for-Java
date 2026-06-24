@@ -7,7 +7,7 @@ import java.util.Objects;
 /** Optional barcode image parameters. */
 public class BarcodeImageParams {
     @SerializedName(value = "imageFormat")
-    private BarcodeImageFormat imageFormat;
+    private BarcodeImageFormat imageFormat = BarcodeImageFormat.PNG;
 
     @SerializedName(value = "textLocation")
     private CodeLocation textLocation;
@@ -34,7 +34,7 @@ public class BarcodeImageParams {
     private Integer rotationAngle;
 
     /**
-     * Get imageFormat
+     * Barcode output image format. Default value: png.
      *
      * @return imageFormat
      */
@@ -47,7 +47,9 @@ public class BarcodeImageParams {
     }
 
     /**
-     * Get textLocation
+     * Specify the displayed text location. Set to CodeLocation.None to hide CodeText. Default value
+     * depends on BarcodeType: CodeLocation.Below for 1D barcodes and CodeLocation.None for 2D
+     * barcodes.
      *
      * @return textLocation
      */
@@ -90,7 +92,7 @@ public class BarcodeImageParams {
     }
 
     /**
-     * Get units
+     * Common units for all measurements. Default units: pixels.
      *
      * @return units
      */

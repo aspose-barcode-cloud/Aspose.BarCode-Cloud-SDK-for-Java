@@ -25,20 +25,6 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.Code128EncodeMode;
-import com.aspose.barcode.cloud.model.Code128Params;
-import com.aspose.barcode.cloud.model.ECIEncodings;
-import com.aspose.barcode.cloud.model.MacroCharacter;
-import com.aspose.barcode.cloud.model.MicroQRVersion;
-import com.aspose.barcode.cloud.model.Pdf417EncodeMode;
-import com.aspose.barcode.cloud.model.Pdf417ErrorLevel;
-import com.aspose.barcode.cloud.model.Pdf417Params;
-import com.aspose.barcode.cloud.model.QREncodeMode;
-import com.aspose.barcode.cloud.model.QRErrorLevel;
-import com.aspose.barcode.cloud.model.QRVersion;
-import com.aspose.barcode.cloud.model.QrParams;
-import com.aspose.barcode.cloud.model.RectMicroQRVersion;
-
 import com.aspose.barcode.cloud.model.ScanBase64Request;
 
 /**
@@ -46,14 +32,14 @@ import com.aspose.barcode.cloud.model.ScanBase64Request;
  * parameter.
  */
 public class ScanBase64RequestWrapper {
-    /** . */
+    /** Scan barcode request.. */
     public final ScanBase64Request scanBase64Request;
 
     /**
      * Scan a barcode from a file in the request body using a POST request with a JSON or XML body
      * parameter..
      *
-     * @param scanBase64Request Param of type ScanBase64Request
+     * @param scanBase64Request Scan barcode request.
      */
     public ScanBase64RequestWrapper(ScanBase64Request scanBase64Request) {
         this.scanBase64Request = scanBase64Request;

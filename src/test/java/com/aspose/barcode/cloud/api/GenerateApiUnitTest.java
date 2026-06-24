@@ -148,8 +148,8 @@ public class GenerateApiUnitTest {
         String url = api.generateCall(request, null, null).request().url().toString();
 
         assertTrue(url.contains("data="));
-        assertTrue(url.contains("foregroundColor="));
-        assertTrue(url.contains("backgroundColor="));
+        assertFalse(url.contains("foregroundColor="));
+        assertFalse(url.contains("backgroundColor="));
         assertFalse(url.contains("imageFormat="));
         assertFalse(url.contains("textLocation="));
         assertFalse(url.contains("units="));
@@ -162,7 +162,8 @@ public class GenerateApiUnitTest {
     @Test
     public void testGenerateCall_WithImageFormat() throws ApiException {
         GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "test");
-        request.imageFormat = BarcodeImageFormat.PNG;
+        request.barcodeImageParams = new BarcodeImageParams();
+        request.barcodeImageParams.setImageFormat(BarcodeImageFormat.PNG);
         String url = api.generateCall(request, null, null).request().url().toString();
         assertTrue(url.contains("imageFormat=Png"));
     }
@@ -170,7 +171,8 @@ public class GenerateApiUnitTest {
     @Test
     public void testGenerateCall_WithResolution() throws ApiException {
         GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "test");
-        request.resolution = 300.0f;
+        request.barcodeImageParams = new BarcodeImageParams();
+        request.barcodeImageParams.setResolution(300.0f);
         String url = api.generateCall(request, null, null).request().url().toString();
         assertTrue(url.contains("resolution=300"));
     }
@@ -187,15 +189,16 @@ public class GenerateApiUnitTest {
     public void testGenerateCall_WithAllOptionalParams() throws ApiException {
         GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "test");
         request.dataType = EncodeDataType.STRING_DATA;
-        request.imageFormat = BarcodeImageFormat.JPEG;
-        request.textLocation = CodeLocation.BELOW;
-        request.foregroundColor = "Red";
-        request.backgroundColor = "Blue";
-        request.units = GraphicsUnit.PIXEL;
-        request.resolution = 150.0f;
-        request.imageHeight = 200.0f;
-        request.imageWidth = 400.0f;
-        request.rotationAngle = 90;
+        request.barcodeImageParams = new BarcodeImageParams();
+        request.barcodeImageParams.setImageFormat(BarcodeImageFormat.JPEG);
+        request.barcodeImageParams.setTextLocation(CodeLocation.BELOW);
+        request.barcodeImageParams.setForegroundColor("Red");
+        request.barcodeImageParams.setBackgroundColor("Blue");
+        request.barcodeImageParams.setUnits(GraphicsUnit.PIXEL);
+        request.barcodeImageParams.setResolution(150.0f);
+        request.barcodeImageParams.setImageHeight(200.0f);
+        request.barcodeImageParams.setImageWidth(400.0f);
+        request.barcodeImageParams.setRotationAngle(90);
 
         String url = api.generateCall(request, null, null).request().url().toString();
         assertTrue(url.contains("dataType="));

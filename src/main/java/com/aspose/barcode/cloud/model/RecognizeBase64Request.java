@@ -58,7 +58,7 @@ public class RecognizeBase64Request {
     }
 
     /**
-     * Get recognitionMode
+     * Barcode recognition mode.
      *
      * @return recognitionMode
      */
@@ -71,7 +71,7 @@ public class RecognizeBase64Request {
     }
 
     /**
-     * Get recognitionImageKind
+     * Image kind for recognition.
      *
      * @return recognitionImageKind
      */
