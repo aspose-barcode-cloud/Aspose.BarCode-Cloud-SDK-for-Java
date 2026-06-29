@@ -1,8 +1,12 @@
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.Pdf417EncodeMode;
+import com.aspose.barcode.cloud.model.Pdf417ErrorLevel;
+import com.aspose.barcode.cloud.model.Pdf417Params;
 import com.aspose.barcode.cloud.requests.GenerateMultipartRequestWrapper;
 
 import java.io.File;
@@ -27,8 +31,16 @@ public class GenerateMultipart {
             GenerateMultipartRequestWrapper request =
                     new GenerateMultipartRequestWrapper(
                             EncodeBarcodeType.PDF417, "Aspose.BarCode.Cloud");
-            request.textLocation = CodeLocation.ABOVE;
-            request.imageFormat = BarcodeImageFormat.SVG;
+            BarcodeImageParams imageParams = new BarcodeImageParams();
+            imageParams.setTextLocation(CodeLocation.ABOVE);
+            imageParams.setImageFormat(BarcodeImageFormat.SVG);
+            request.barcodeImageParams = imageParams;
+
+            Pdf417Params pdf417Params = new Pdf417Params();
+            pdf417Params.setPdf417EncodeMode(Pdf417EncodeMode.AUTO);
+            pdf417Params.setPdf417ErrorLevel(Pdf417ErrorLevel.LEVEL2);
+            pdf417Params.setPdf417AspectRatio(2.0f);
+            request.pdf417Params = pdf417Params;
 
             File barcodeImage = generateApi.generateMultipart(request);
 

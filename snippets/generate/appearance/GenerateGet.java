@@ -1,8 +1,13 @@
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.QREncodeMode;
+import com.aspose.barcode.cloud.model.QRErrorLevel;
+import com.aspose.barcode.cloud.model.QRVersion;
+import com.aspose.barcode.cloud.model.QrParams;
 import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
 import java.io.File;
@@ -27,13 +32,22 @@ public class GenerateGet {
             GenerateRequestWrapper request =
                     new GenerateRequestWrapper(EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
 
-            request.imageFormat = BarcodeImageFormat.PNG;
-            request.foregroundColor = "Black";
-            request.backgroundColor = "White";
-            request.textLocation = CodeLocation.BELOW;
-            request.imageHeight = 200f;
-            request.imageWidth = 200f;
-            request.resolution = 300f;
+            BarcodeImageParams imageParams = new BarcodeImageParams();
+            imageParams.setImageFormat(BarcodeImageFormat.PNG);
+            imageParams.setForegroundColor("Black");
+            imageParams.setBackgroundColor("White");
+            imageParams.setTextLocation(CodeLocation.BELOW);
+            imageParams.setImageHeight(200f);
+            imageParams.setImageWidth(200f);
+            imageParams.setResolution(300f);
+            request.barcodeImageParams = imageParams;
+
+            QrParams qrParams = new QrParams();
+            qrParams.setQrEncodeMode(QREncodeMode.AUTO);
+            qrParams.setQrErrorLevel(QRErrorLevel.LEVEL_M);
+            qrParams.setQrVersion(QRVersion.AUTO);
+            qrParams.setQrAspectRatio(1.0f);
+            request.qrParams = qrParams;
 
             File barcodeImage = generateApi.generate(request);
 

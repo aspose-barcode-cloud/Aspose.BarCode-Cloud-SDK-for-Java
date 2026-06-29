@@ -1,5 +1,6 @@
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.GenerateApi;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.GraphicsUnit;
 import com.aspose.barcode.cloud.requests.GenerateMultipartRequestWrapper;
@@ -26,10 +27,12 @@ public class GenerateMultipart {
             GenerateMultipartRequestWrapper request =
                     new GenerateMultipartRequestWrapper(
                             EncodeBarcodeType.AZTEC, "Aspose.BarCode.Cloud");
-            request.imageHeight = 200f;
-            request.imageWidth = 200f;
-            request.resolution = 150f;
-            request.units = GraphicsUnit.POINT;
+            BarcodeImageParams imageParams = new BarcodeImageParams();
+            imageParams.setImageHeight(200f);
+            imageParams.setImageWidth(200f);
+            imageParams.setResolution(150f);
+            imageParams.setUnits(GraphicsUnit.POINT);
+            request.barcodeImageParams = imageParams;
 
             File barcodeImage = generateApi.generateMultipart(request);
 
