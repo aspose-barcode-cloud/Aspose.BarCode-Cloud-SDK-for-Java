@@ -25,149 +25,41 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.Code128EncodeMode;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.Code128Params;
-import com.aspose.barcode.cloud.model.ECIEncodings;
-import com.aspose.barcode.cloud.model.MacroCharacter;
-import com.aspose.barcode.cloud.model.MicroQRVersion;
-import com.aspose.barcode.cloud.model.Pdf417EncodeMode;
-import com.aspose.barcode.cloud.model.Pdf417ErrorLevel;
-import com.aspose.barcode.cloud.model.Pdf417Params;
-import com.aspose.barcode.cloud.model.QREncodeMode;
-import com.aspose.barcode.cloud.model.QRErrorLevel;
-import com.aspose.barcode.cloud.model.QRVersion;
-import com.aspose.barcode.cloud.model.QrParams;
-import com.aspose.barcode.cloud.model.RectMicroQRVersion;
-
-import com.aspose.barcode.cloud.model.BarcodeImageFormat;
-import com.aspose.barcode.cloud.model.CodeLocation;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
-import com.aspose.barcode.cloud.model.GraphicsUnit;
+import com.aspose.barcode.cloud.model.Pdf417Params;
+import com.aspose.barcode.cloud.model.QrParams;
 
 /** Generate a barcode using a POST request with parameters in a multipart form. */
 public class GenerateMultipartRequestWrapper {
-    /** . */
+    /** See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/. */
     public final EncodeBarcodeType barcodeType;
 
     /** String that represents the data to encode.. */
     public final String data;
 
-    /** . */
-    public EncodeDataType dataType;
+    /** Type of data to encode. Default value: StringData.. */
+    public EncodeDataType dataType = EncodeDataType.fromValue("StringData");
 
-    /** . */
-    public BarcodeImageFormat imageFormat;
+    /** Grouped BarcodeImageParams parameters. */
+    public BarcodeImageParams barcodeImageParams;
 
-    /** . */
-    public CodeLocation textLocation;
+    /** Grouped QrParams parameters. */
+    public QrParams qrParams;
 
-    /**
-     * Specify the display color for bars and content. Value: Color name from
-     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value starting with #.
-     * For example: AliceBlue or #FF000000. Default value: Black..
-     */
-    public String foregroundColor = "Black";
+    /** Grouped Code128Params parameters. */
+    public Code128Params code128Params;
 
-    /**
-     * Background color of the barcode image. Value: Color name from
-     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value starting with #.
-     * For example: AliceBlue or #FF000000. Default value: White..
-     */
-    public String backgroundColor = "White";
-
-    /** . */
-    public GraphicsUnit units;
-
-    /**
-     * Resolution of the barcode image. One value for both dimensions. Default value: 96 dpi.
-     * Decimal separator is a dot..
-     */
-    public Float resolution;
-
-    /**
-     * Height of the barcode image in the specified units. Default units: pixels. Decimal separator
-     * is a dot..
-     */
-    public Float imageHeight;
-
-    /**
-     * Width of the barcode image in the specified units. Default units: pixels. Decimal separator
-     * is a dot..
-     */
-    public Float imageWidth;
-
-    /**
-     * Barcode image rotation angle, measured in degrees. For example, RotationAngle = 0 or
-     * RotationAngle = 360 means no rotation. If RotationAngle is not equal to 90, 180, 270, or 0,
-     * it may increase the difficulty for the scanner to read the image. Default value: 0..
-     */
-    public Integer rotationAngle;
-
-    /** . */
-    public QREncodeMode qrEncodeMode;
-
-    /** . */
-    public QRErrorLevel qrErrorLevel;
-
-    /** . */
-    public QRVersion qrVersion;
-
-    /** . */
-    public ECIEncodings qrECIEncoding;
-
-    /** QR barcode aspect ratio. Values: 0 to 1.. */
-    public Float qrAspectRatio;
-
-    /** . */
-    public MicroQRVersion microQRVersion;
-
-    /** . */
-    public RectMicroQRVersion rectMicroQrVersion;
-
-    /** . */
-    public Code128EncodeMode code128EncodeMode;
-
-    /** . */
-    public Pdf417EncodeMode pdf417EncodeMode;
-
-    /** . */
-    public Pdf417ErrorLevel pdf417ErrorLevel;
-
-    /** Whether to use truncated PDF417 format (removes right-side stop pattern).. */
-    public Boolean pdf417Truncate;
-
-    /** Number of columns in the PDF417 barcode. Values between 1 and 30. 0 for auto.. */
-    public Integer pdf417Columns;
-
-    /** Number of rows in the PDF417 barcode. Values between 3 and 90. 0 for automatic.. */
-    public Integer pdf417Rows;
-
-    /**
-     * PDF417 barcode aspect ratio (height/width of the barcode module). Values are defined by the
-     * standard: 2 to 5 for MicroPdf417; 3 to 5 for Pdf417 and MacroPdf417..
-     */
-    public Float pdf417AspectRatio;
-
-    /** . */
-    public ECIEncodings pdf417ECIEncoding;
-
-    /** Whether the barcode is used for reader initialization (programming).. */
-    public Boolean pdf417IsReaderInitialization;
-
-    /** . */
-    public MacroCharacter pdf417MacroCharacters;
-
-    /** Whether to use linked mode (for MicroPdf417).. */
-    public Boolean pdf417IsLinked;
-
-    /** Whether to use Code128 emulation for MicroPdf417.. */
-    public Boolean pdf417IsCode128Emulation;
+    /** Grouped Pdf417Params parameters. */
+    public Pdf417Params pdf417Params;
 
     /**
      * Generate a barcode using a POST request with parameters in a multipart form..
      *
-     * @param barcodeType Param of type EncodeBarcodeType
+     * @param barcodeType See
+     *     https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/
      * @param data String that represents the data to encode.
      */
     public GenerateMultipartRequestWrapper(EncodeBarcodeType barcodeType, String data) {

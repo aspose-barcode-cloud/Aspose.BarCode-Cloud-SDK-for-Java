@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
@@ -29,7 +30,8 @@ public class EndToEndTest extends TestBase {
         GenerateRequestWrapper genRequest =
                 new GenerateRequestWrapper(EncodeBarcodeType.QR, "Java SDK Test");
         genRequest.dataType = EncodeDataType.STRING_DATA;
-        genRequest.imageFormat = BarcodeImageFormat.PNG;
+        genRequest.barcodeImageParams = new BarcodeImageParams();
+        genRequest.barcodeImageParams.setImageFormat(BarcodeImageFormat.PNG);
 
         // Generate barcode
         File genResponse = genApi.generate(genRequest);

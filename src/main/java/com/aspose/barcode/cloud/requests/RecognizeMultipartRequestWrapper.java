@@ -25,20 +25,6 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.Code128EncodeMode;
-import com.aspose.barcode.cloud.model.Code128Params;
-import com.aspose.barcode.cloud.model.ECIEncodings;
-import com.aspose.barcode.cloud.model.MacroCharacter;
-import com.aspose.barcode.cloud.model.MicroQRVersion;
-import com.aspose.barcode.cloud.model.Pdf417EncodeMode;
-import com.aspose.barcode.cloud.model.Pdf417ErrorLevel;
-import com.aspose.barcode.cloud.model.Pdf417Params;
-import com.aspose.barcode.cloud.model.QREncodeMode;
-import com.aspose.barcode.cloud.model.QRErrorLevel;
-import com.aspose.barcode.cloud.model.QRVersion;
-import com.aspose.barcode.cloud.model.QrParams;
-import com.aspose.barcode.cloud.model.RectMicroQRVersion;
-
 import com.aspose.barcode.cloud.model.DecodeBarcodeType;
 import com.aspose.barcode.cloud.model.RecognitionImageKind;
 import com.aspose.barcode.cloud.model.RecognitionMode;
@@ -50,23 +36,26 @@ import java.io.File;
  * parameters.
  */
 public class RecognizeMultipartRequestWrapper {
-    /** . */
+    /**
+     * See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/.
+     */
     public final DecodeBarcodeType barcodeType;
 
     /** Barcode image file.. */
     public final File file;
 
-    /** . */
+    /** Recognition mode.. */
     public RecognitionMode recognitionMode;
 
-    /** . */
+    /** Image kind for recognition.. */
     public RecognitionImageKind recognitionImageKind;
 
     /**
      * Recognize a barcode from a file in the request body using a POST request with multipart form
      * parameters..
      *
-     * @param barcodeType Param of type DecodeBarcodeType
+     * @param barcodeType See
+     *     https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/
      * @param file Barcode image file.
      */
     public RecognizeMultipartRequestWrapper(DecodeBarcodeType barcodeType, File file) {

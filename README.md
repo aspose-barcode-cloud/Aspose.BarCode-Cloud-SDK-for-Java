@@ -107,11 +107,13 @@ import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.QREncodeMode;
 import com.aspose.barcode.cloud.model.QRErrorLevel;
 import com.aspose.barcode.cloud.model.QRVersion;
+import com.aspose.barcode.cloud.model.QrParams;
 import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 import com.aspose.barcode.cloud.requests.ScanMultipartRequestWrapper;
 
@@ -146,11 +148,13 @@ public class Example {
         EncodeBarcodeType type = EncodeBarcodeType.QR;
         String text = "Aspose.BarCode for Cloud Sample";
         GenerateRequestWrapper request = new GenerateRequestWrapper(type, text);
-        request.imageFormat = BarcodeImageFormat.JPEG;
-        request.qrEncodeMode = QREncodeMode.AUTO;
-        request.qrErrorLevel = QRErrorLevel.LEVEL_M;
-        request.qrVersion = QRVersion.AUTO;
-        request.qrAspectRatio = 0.75f;
+        request.barcodeImageParams = new BarcodeImageParams();
+        request.barcodeImageParams.setImageFormat(BarcodeImageFormat.JPEG);
+        request.qrParams = new QrParams();
+        request.qrParams.setQrEncodeMode(QREncodeMode.AUTO);
+        request.qrParams.setQrErrorLevel(QRErrorLevel.LEVEL_M);
+        request.qrParams.setQrVersion(QRVersion.AUTO);
+        request.qrParams.setQrAspectRatio(0.75f);
 
         return api.generate(request);
     }

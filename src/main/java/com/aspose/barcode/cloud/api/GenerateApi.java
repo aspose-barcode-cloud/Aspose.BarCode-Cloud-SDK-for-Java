@@ -83,130 +83,181 @@ public class GenerateApi {
             queryParams.addAll(apiClient.parameterToPair("data", request.data));
         }
 
-        if (request.imageFormat != null) {
-            queryParams.addAll(apiClient.parameterToPair("imageFormat", request.imageFormat));
-        }
-
-        if (request.textLocation != null) {
-            queryParams.addAll(apiClient.parameterToPair("textLocation", request.textLocation));
-        }
-
-        if (request.foregroundColor != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("foregroundColor", request.foregroundColor));
-        }
-
-        if (request.backgroundColor != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("backgroundColor", request.backgroundColor));
-        }
-
-        if (request.units != null) {
-            queryParams.addAll(apiClient.parameterToPair("units", request.units));
-        }
-
-        if (request.resolution != null) {
-            queryParams.addAll(apiClient.parameterToPair("resolution", request.resolution));
-        }
-
-        if (request.imageHeight != null) {
-            queryParams.addAll(apiClient.parameterToPair("imageHeight", request.imageHeight));
-        }
-
-        if (request.imageWidth != null) {
-            queryParams.addAll(apiClient.parameterToPair("imageWidth", request.imageWidth));
-        }
-
-        if (request.rotationAngle != null) {
-            queryParams.addAll(apiClient.parameterToPair("rotationAngle", request.rotationAngle));
-        }
-
-        if (request.qrEncodeMode != null) {
-            queryParams.addAll(apiClient.parameterToPair("qrEncodeMode", request.qrEncodeMode));
-        }
-
-        if (request.qrErrorLevel != null) {
-            queryParams.addAll(apiClient.parameterToPair("qrErrorLevel", request.qrErrorLevel));
-        }
-
-        if (request.qrVersion != null) {
-            queryParams.addAll(apiClient.parameterToPair("qrVersion", request.qrVersion));
-        }
-
-        if (request.qrECIEncoding != null) {
-            queryParams.addAll(apiClient.parameterToPair("qrECIEncoding", request.qrECIEncoding));
-        }
-
-        if (request.qrAspectRatio != null) {
-            queryParams.addAll(apiClient.parameterToPair("qrAspectRatio", request.qrAspectRatio));
-        }
-
-        if (request.microQRVersion != null) {
-            queryParams.addAll(apiClient.parameterToPair("microQRVersion", request.microQRVersion));
-        }
-
-        if (request.rectMicroQrVersion != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("rectMicroQrVersion", request.rectMicroQrVersion));
-        }
-
-        if (request.code128EncodeMode != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("code128EncodeMode", request.code128EncodeMode));
-        }
-
-        if (request.pdf417EncodeMode != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("pdf417EncodeMode", request.pdf417EncodeMode));
-        }
-
-        if (request.pdf417ErrorLevel != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("pdf417ErrorLevel", request.pdf417ErrorLevel));
-        }
-
-        if (request.pdf417Truncate != null) {
-            queryParams.addAll(apiClient.parameterToPair("pdf417Truncate", request.pdf417Truncate));
-        }
-
-        if (request.pdf417Columns != null) {
-            queryParams.addAll(apiClient.parameterToPair("pdf417Columns", request.pdf417Columns));
-        }
-
-        if (request.pdf417Rows != null) {
-            queryParams.addAll(apiClient.parameterToPair("pdf417Rows", request.pdf417Rows));
-        }
-
-        if (request.pdf417AspectRatio != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("pdf417AspectRatio", request.pdf417AspectRatio));
-        }
-
-        if (request.pdf417ECIEncoding != null) {
-            queryParams.addAll(
-                    apiClient.parameterToPair("pdf417ECIEncoding", request.pdf417ECIEncoding));
-        }
-
-        if (request.pdf417IsReaderInitialization != null) {
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getImageFormat() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
-                            "pdf417IsReaderInitialization", request.pdf417IsReaderInitialization));
+                            "imageFormat", request.barcodeImageParams.getImageFormat()));
         }
 
-        if (request.pdf417MacroCharacters != null) {
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getTextLocation() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
-                            "pdf417MacroCharacters", request.pdf417MacroCharacters));
+                            "textLocation", request.barcodeImageParams.getTextLocation()));
         }
 
-        if (request.pdf417IsLinked != null) {
-            queryParams.addAll(apiClient.parameterToPair("pdf417IsLinked", request.pdf417IsLinked));
-        }
-
-        if (request.pdf417IsCode128Emulation != null) {
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getForegroundColor() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
-                            "pdf417IsCode128Emulation", request.pdf417IsCode128Emulation));
+                            "foregroundColor", request.barcodeImageParams.getForegroundColor()));
+        }
+
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getBackgroundColor() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "backgroundColor", request.barcodeImageParams.getBackgroundColor()));
+        }
+
+        if (request.barcodeImageParams != null && request.barcodeImageParams.getUnits() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("units", request.barcodeImageParams.getUnits()));
+        }
+
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getResolution() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "resolution", request.barcodeImageParams.getResolution()));
+        }
+
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getImageHeight() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "imageHeight", request.barcodeImageParams.getImageHeight()));
+        }
+
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getImageWidth() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "imageWidth", request.barcodeImageParams.getImageWidth()));
+        }
+
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getRotationAngle() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "rotationAngle", request.barcodeImageParams.getRotationAngle()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getQrEncodeMode() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("qrEncodeMode", request.qrParams.getQrEncodeMode()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getQrErrorLevel() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("qrErrorLevel", request.qrParams.getQrErrorLevel()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getQrVersion() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("qrVersion", request.qrParams.getQrVersion()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getQrECIEncoding() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "qrECIEncoding", request.qrParams.getQrECIEncoding()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getQrAspectRatio() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "qrAspectRatio", request.qrParams.getQrAspectRatio()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getMicroQRVersion() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "microQRVersion", request.qrParams.getMicroQRVersion()));
+        }
+
+        if (request.qrParams != null && request.qrParams.getRectMicroQrVersion() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "rectMicroQrVersion", request.qrParams.getRectMicroQrVersion()));
+        }
+
+        if (request.code128Params != null && request.code128Params.getCode128EncodeMode() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "code128EncodeMode", request.code128Params.getCode128EncodeMode()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417EncodeMode() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417EncodeMode", request.pdf417Params.getPdf417EncodeMode()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417ErrorLevel() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417ErrorLevel", request.pdf417Params.getPdf417ErrorLevel()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417Truncate() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417Truncate", request.pdf417Params.isgetPdf417Truncate()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417Columns() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417Columns", request.pdf417Params.getPdf417Columns()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417Rows() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair("pdf417Rows", request.pdf417Params.getPdf417Rows()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417AspectRatio() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417AspectRatio", request.pdf417Params.getPdf417AspectRatio()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417ECIEncoding() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417ECIEncoding", request.pdf417Params.getPdf417ECIEncoding()));
+        }
+
+        if (request.pdf417Params != null
+                && request.pdf417Params.isgetPdf417IsReaderInitialization() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417IsReaderInitialization",
+                            request.pdf417Params.isgetPdf417IsReaderInitialization()));
+        }
+
+        if (request.pdf417Params != null
+                && request.pdf417Params.getPdf417MacroCharacters() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417MacroCharacters",
+                            request.pdf417Params.getPdf417MacroCharacters()));
+        }
+
+        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417IsLinked() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417IsLinked", request.pdf417Params.isgetPdf417IsLinked()));
+        }
+
+        if (request.pdf417Params != null
+                && request.pdf417Params.isgetPdf417IsCode128Emulation() != null) {
+            queryParams.addAll(
+                    apiClient.parameterToPair(
+                            "pdf417IsCode128Emulation",
+                            request.pdf417Params.isgetPdf417IsCode128Emulation()));
         }
 
         Map<String, String> headerParams = new HashMap<>();
@@ -563,116 +614,132 @@ public class GenerateApi {
             formParams.put("data", request.data);
         }
 
-        if (request.imageFormat != null) {
-            formParams.put("imageFormat", request.imageFormat);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getImageFormat() != null) {
+            formParams.put("imageFormat", request.barcodeImageParams.getImageFormat());
         }
 
-        if (request.textLocation != null) {
-            formParams.put("textLocation", request.textLocation);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getTextLocation() != null) {
+            formParams.put("textLocation", request.barcodeImageParams.getTextLocation());
         }
 
-        if (request.foregroundColor != null) {
-            formParams.put("foregroundColor", request.foregroundColor);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getForegroundColor() != null) {
+            formParams.put("foregroundColor", request.barcodeImageParams.getForegroundColor());
         }
 
-        if (request.backgroundColor != null) {
-            formParams.put("backgroundColor", request.backgroundColor);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getBackgroundColor() != null) {
+            formParams.put("backgroundColor", request.barcodeImageParams.getBackgroundColor());
         }
 
-        if (request.units != null) {
-            formParams.put("units", request.units);
+        if (request.barcodeImageParams != null && request.barcodeImageParams.getUnits() != null) {
+            formParams.put("units", request.barcodeImageParams.getUnits());
         }
 
-        if (request.resolution != null) {
-            formParams.put("resolution", request.resolution);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getResolution() != null) {
+            formParams.put("resolution", request.barcodeImageParams.getResolution());
         }
 
-        if (request.imageHeight != null) {
-            formParams.put("imageHeight", request.imageHeight);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getImageHeight() != null) {
+            formParams.put("imageHeight", request.barcodeImageParams.getImageHeight());
         }
 
-        if (request.imageWidth != null) {
-            formParams.put("imageWidth", request.imageWidth);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getImageWidth() != null) {
+            formParams.put("imageWidth", request.barcodeImageParams.getImageWidth());
         }
 
-        if (request.rotationAngle != null) {
-            formParams.put("rotationAngle", request.rotationAngle);
+        if (request.barcodeImageParams != null
+                && request.barcodeImageParams.getRotationAngle() != null) {
+            formParams.put("rotationAngle", request.barcodeImageParams.getRotationAngle());
         }
 
-        if (request.qrEncodeMode != null) {
-            formParams.put("qrEncodeMode", request.qrEncodeMode);
+        if (request.qrParams != null && request.qrParams.getQrEncodeMode() != null) {
+            formParams.put("qrEncodeMode", request.qrParams.getQrEncodeMode());
         }
 
-        if (request.qrErrorLevel != null) {
-            formParams.put("qrErrorLevel", request.qrErrorLevel);
+        if (request.qrParams != null && request.qrParams.getQrErrorLevel() != null) {
+            formParams.put("qrErrorLevel", request.qrParams.getQrErrorLevel());
         }
 
-        if (request.qrVersion != null) {
-            formParams.put("qrVersion", request.qrVersion);
+        if (request.qrParams != null && request.qrParams.getQrVersion() != null) {
+            formParams.put("qrVersion", request.qrParams.getQrVersion());
         }
 
-        if (request.qrECIEncoding != null) {
-            formParams.put("qrECIEncoding", request.qrECIEncoding);
+        if (request.qrParams != null && request.qrParams.getQrECIEncoding() != null) {
+            formParams.put("qrECIEncoding", request.qrParams.getQrECIEncoding());
         }
 
-        if (request.qrAspectRatio != null) {
-            formParams.put("qrAspectRatio", request.qrAspectRatio);
+        if (request.qrParams != null && request.qrParams.getQrAspectRatio() != null) {
+            formParams.put("qrAspectRatio", request.qrParams.getQrAspectRatio());
         }
 
-        if (request.microQRVersion != null) {
-            formParams.put("microQRVersion", request.microQRVersion);
+        if (request.qrParams != null && request.qrParams.getMicroQRVersion() != null) {
+            formParams.put("microQRVersion", request.qrParams.getMicroQRVersion());
         }
 
-        if (request.rectMicroQrVersion != null) {
-            formParams.put("rectMicroQrVersion", request.rectMicroQrVersion);
+        if (request.qrParams != null && request.qrParams.getRectMicroQrVersion() != null) {
+            formParams.put("rectMicroQrVersion", request.qrParams.getRectMicroQrVersion());
         }
 
-        if (request.code128EncodeMode != null) {
-            formParams.put("code128EncodeMode", request.code128EncodeMode);
+        if (request.code128Params != null && request.code128Params.getCode128EncodeMode() != null) {
+            formParams.put("code128EncodeMode", request.code128Params.getCode128EncodeMode());
         }
 
-        if (request.pdf417EncodeMode != null) {
-            formParams.put("pdf417EncodeMode", request.pdf417EncodeMode);
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417EncodeMode() != null) {
+            formParams.put("pdf417EncodeMode", request.pdf417Params.getPdf417EncodeMode());
         }
 
-        if (request.pdf417ErrorLevel != null) {
-            formParams.put("pdf417ErrorLevel", request.pdf417ErrorLevel);
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417ErrorLevel() != null) {
+            formParams.put("pdf417ErrorLevel", request.pdf417Params.getPdf417ErrorLevel());
         }
 
-        if (request.pdf417Truncate != null) {
-            formParams.put("pdf417Truncate", request.pdf417Truncate);
+        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417Truncate() != null) {
+            formParams.put("pdf417Truncate", request.pdf417Params.isgetPdf417Truncate());
         }
 
-        if (request.pdf417Columns != null) {
-            formParams.put("pdf417Columns", request.pdf417Columns);
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417Columns() != null) {
+            formParams.put("pdf417Columns", request.pdf417Params.getPdf417Columns());
         }
 
-        if (request.pdf417Rows != null) {
-            formParams.put("pdf417Rows", request.pdf417Rows);
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417Rows() != null) {
+            formParams.put("pdf417Rows", request.pdf417Params.getPdf417Rows());
         }
 
-        if (request.pdf417AspectRatio != null) {
-            formParams.put("pdf417AspectRatio", request.pdf417AspectRatio);
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417AspectRatio() != null) {
+            formParams.put("pdf417AspectRatio", request.pdf417Params.getPdf417AspectRatio());
         }
 
-        if (request.pdf417ECIEncoding != null) {
-            formParams.put("pdf417ECIEncoding", request.pdf417ECIEncoding);
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417ECIEncoding() != null) {
+            formParams.put("pdf417ECIEncoding", request.pdf417Params.getPdf417ECIEncoding());
         }
 
-        if (request.pdf417IsReaderInitialization != null) {
-            formParams.put("pdf417IsReaderInitialization", request.pdf417IsReaderInitialization);
+        if (request.pdf417Params != null
+                && request.pdf417Params.isgetPdf417IsReaderInitialization() != null) {
+            formParams.put(
+                    "pdf417IsReaderInitialization",
+                    request.pdf417Params.isgetPdf417IsReaderInitialization());
         }
 
-        if (request.pdf417MacroCharacters != null) {
-            formParams.put("pdf417MacroCharacters", request.pdf417MacroCharacters);
+        if (request.pdf417Params != null
+                && request.pdf417Params.getPdf417MacroCharacters() != null) {
+            formParams.put(
+                    "pdf417MacroCharacters", request.pdf417Params.getPdf417MacroCharacters());
         }
 
-        if (request.pdf417IsLinked != null) {
-            formParams.put("pdf417IsLinked", request.pdf417IsLinked);
+        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417IsLinked() != null) {
+            formParams.put("pdf417IsLinked", request.pdf417Params.isgetPdf417IsLinked());
         }
 
-        if (request.pdf417IsCode128Emulation != null) {
-            formParams.put("pdf417IsCode128Emulation", request.pdf417IsCode128Emulation);
+        if (request.pdf417Params != null
+                && request.pdf417Params.isgetPdf417IsCode128Emulation() != null) {
+            formParams.put(
+                    "pdf417IsCode128Emulation",
+                    request.pdf417Params.isgetPdf417IsCode128Emulation());
         }
 
         final String[] accepts = {

@@ -27,8 +27,8 @@ public class GenerateParams {
     /**
      * .
      *
-     * @param barcodeType Param of type EncodeBarcodeType
-     * @param encodeData Param of type EncodeData
+     * @param barcodeType Barcode type.
+     * @param encodeData Data to encode into a barcode.
      */
     public GenerateParams(EncodeBarcodeType barcodeType, EncodeData encodeData) {
         this.barcodeType = barcodeType;
@@ -36,7 +36,7 @@ public class GenerateParams {
     }
 
     /**
-     * Get barcodeType
+     * Barcode type.
      *
      * @return barcodeType
      */
@@ -49,7 +49,7 @@ public class GenerateParams {
     }
 
     /**
-     * Get encodeData
+     * Data to encode into a barcode.
      *
      * @return encodeData
      */
@@ -62,7 +62,7 @@ public class GenerateParams {
     }
 
     /**
-     * Get barcodeImageParams
+     * Optional barcode image parameters.
      *
      * @return barcodeImageParams
      */
@@ -75,7 +75,7 @@ public class GenerateParams {
     }
 
     /**
-     * Get qrParams
+     * Optional QR barcode generation parameters.
      *
      * @return qrParams
      */
@@ -88,7 +88,7 @@ public class GenerateParams {
     }
 
     /**
-     * Get code128Params
+     * Optional Code128 barcode generation parameters.
      *
      * @return code128Params
      */
@@ -101,7 +101,7 @@ public class GenerateParams {
     }
 
     /**
-     * Get pdf417Params
+     * Optional PDF417 barcode generation parameters.
      *
      * @return pdf417Params
      */

@@ -31,7 +31,7 @@ public class QrParams {
     private RectMicroQRVersion rectMicroQrVersion;
 
     /**
-     * Get qrEncodeMode
+     * QR barcode encode mode.
      *
      * @return qrEncodeMode
      */
@@ -44,7 +44,7 @@ public class QrParams {
     }
 
     /**
-     * Get qrErrorLevel
+     * QR barcode error correction level.
      *
      * @return qrErrorLevel
      */
@@ -57,7 +57,7 @@ public class QrParams {
     }
 
     /**
-     * Get qrVersion
+     * QR barcode version. Automatically selects the smallest version that fits the data.
      *
      * @return qrVersion
      */
@@ -70,7 +70,7 @@ public class QrParams {
     }
 
     /**
-     * Get qrECIEncoding
+     * ECI encoding for QR barcode data.
      *
      * @return qrECIEncoding
      */
@@ -96,7 +96,7 @@ public class QrParams {
     }
 
     /**
-     * Get microQRVersion
+     * MicroQR barcode version. Used when BarcodeType is MicroQR.
      *
      * @return microQRVersion
      */
@@ -109,7 +109,7 @@ public class QrParams {
     }
 
     /**
-     * Get rectMicroQrVersion
+     * RectMicroQR barcode version. Used when BarcodeType is RectMicroQR.
      *
      * @return rectMicroQrVersion
      */

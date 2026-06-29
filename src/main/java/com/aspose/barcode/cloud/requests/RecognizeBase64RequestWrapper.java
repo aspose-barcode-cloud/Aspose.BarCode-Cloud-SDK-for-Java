@@ -25,20 +25,6 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.Code128EncodeMode;
-import com.aspose.barcode.cloud.model.Code128Params;
-import com.aspose.barcode.cloud.model.ECIEncodings;
-import com.aspose.barcode.cloud.model.MacroCharacter;
-import com.aspose.barcode.cloud.model.MicroQRVersion;
-import com.aspose.barcode.cloud.model.Pdf417EncodeMode;
-import com.aspose.barcode.cloud.model.Pdf417ErrorLevel;
-import com.aspose.barcode.cloud.model.Pdf417Params;
-import com.aspose.barcode.cloud.model.QREncodeMode;
-import com.aspose.barcode.cloud.model.QRErrorLevel;
-import com.aspose.barcode.cloud.model.QRVersion;
-import com.aspose.barcode.cloud.model.QrParams;
-import com.aspose.barcode.cloud.model.RectMicroQRVersion;
-
 import com.aspose.barcode.cloud.model.RecognizeBase64Request;
 
 /**
@@ -46,14 +32,14 @@ import com.aspose.barcode.cloud.model.RecognizeBase64Request;
  * parameters.
  */
 public class RecognizeBase64RequestWrapper {
-    /** . */
+    /** Barcode recognition request.. */
     public final RecognizeBase64Request recognizeBase64Request;
 
     /**
      * Recognize a barcode from a file in the request body using a POST request with JSON or XML
      * body parameters..
      *
-     * @param recognizeBase64Request Param of type RecognizeBase64Request
+     * @param recognizeBase64Request Barcode recognition request.
      */
     public RecognizeBase64RequestWrapper(RecognizeBase64Request recognizeBase64Request) {
         this.recognizeBase64Request = recognizeBase64Request;

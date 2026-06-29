@@ -10,7 +10,7 @@ public class Code128Params {
     private Code128EncodeMode code128EncodeMode;
 
     /**
-     * Get code128EncodeMode
+     * Code128 barcode encode mode. Controls which Code 128 subset (A, B, C, or mix) is used.
      *
      * @return code128EncodeMode
      */
