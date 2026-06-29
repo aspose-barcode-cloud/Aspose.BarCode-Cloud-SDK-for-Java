@@ -10,7 +10,10 @@ import com.aspose.barcode.cloud.requests.GenerateBodyRequestWrapper;
 import com.aspose.barcode.cloud.requests.GenerateMultipartRequestWrapper;
 import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 
+import okhttp3.MultipartBody;
 import okhttp3.Request;
+
+import okio.Buffer;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,6 +21,7 @@ import org.junit.Test;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class GenerateApiUnitTest {
 
@@ -213,6 +217,35 @@ public class GenerateApiUnitTest {
         assertTrue(url.contains("rotationAngle="));
     }
 
+    @Test
+    public void testGenerateCall_WithGroupedGenerationParams() throws ApiException {
+        GenerateRequestWrapper request = new GenerateRequestWrapper(EncodeBarcodeType.QR, "test");
+        request.qrParams = buildQrParams();
+        request.code128Params = buildCode128Params();
+        request.pdf417Params = buildPdf417Params();
+
+        String url = api.generateCall(request, null, null).request().url().toString();
+        assertTrue(url.contains("qrEncodeMode=Auto"));
+        assertTrue(url.contains("qrErrorLevel=LevelM"));
+        assertTrue(url.contains("qrVersion=Version01"));
+        assertTrue(url.contains("qrECIEncoding=UTF8"));
+        assertTrue(url.contains("qrAspectRatio=0.75"));
+        assertTrue(url.contains("microQRVersion=M2"));
+        assertTrue(url.contains("rectMicroQrVersion=R7x43"));
+        assertTrue(url.contains("code128EncodeMode=CodeB"));
+        assertTrue(url.contains("pdf417EncodeMode=Auto"));
+        assertTrue(url.contains("pdf417ErrorLevel=Level2"));
+        assertTrue(url.contains("pdf417Truncate=true"));
+        assertTrue(url.contains("pdf417Columns=3"));
+        assertTrue(url.contains("pdf417Rows=9"));
+        assertTrue(url.contains("pdf417AspectRatio=3.0"));
+        assertTrue(url.contains("pdf417ECIEncoding=UTF8"));
+        assertTrue(url.contains("pdf417IsReaderInitialization=false"));
+        assertTrue(url.contains("pdf417MacroCharacters=Macro05"));
+        assertTrue(url.contains("pdf417IsLinked=false"));
+        assertTrue(url.contains("pdf417IsCode128Emulation=false"));
+    }
+
     // --- Group D: Content-Type and body tests ---
 
     @Test
@@ -235,12 +268,76 @@ public class GenerateApiUnitTest {
     }
 
     @Test
+    public void testGenerateBodyCall_WithGroupedGenerationParamsInJson() throws Exception {
+        EncodeData encodeData = new EncodeData("test");
+        GenerateParams params = new GenerateParams(EncodeBarcodeType.PDF417, encodeData);
+        params.setQrParams(buildQrParams());
+        params.setCode128Params(buildCode128Params());
+        params.setPdf417Params(buildPdf417Params());
+
+        GenerateBodyRequestWrapper request = new GenerateBodyRequestWrapper(params);
+        Request httpRequest = api.generateBodyCall(request, null, null).request();
+
+        Buffer buffer = new Buffer();
+        httpRequest.body().writeTo(buffer);
+        String body = buffer.readUtf8();
+
+        assertTrue(body.contains("\"qrParams\""));
+        assertTrue(body.contains("\"qrEncodeMode\""));
+        assertTrue(body.contains("\"Auto\""));
+        assertTrue(body.contains("\"code128Params\""));
+        assertTrue(body.contains("\"code128EncodeMode\""));
+        assertTrue(body.contains("\"CodeB\""));
+        assertTrue(body.contains("\"pdf417Params\""));
+        assertTrue(body.contains("\"pdf417Columns\""));
+        assertTrue(body.contains("\"pdf417Rows\""));
+        assertTrue(body.contains("\"pdf417IsCode128Emulation\""));
+    }
+
+    @Test
     public void testGenerateMultipartCall_ContentTypeMultipart() throws ApiException {
         GenerateMultipartRequestWrapper request =
                 new GenerateMultipartRequestWrapper(EncodeBarcodeType.QR, "test");
         Request httpRequest = api.generateMultipartCall(request, null, null).request();
         String contentType = httpRequest.header("Content-Type");
         assertTrue(contentType.contains("multipart/form-data"));
+    }
+
+    @Test
+    public void testGenerateMultipartCall_WithGroupedGenerationParams() throws ApiException {
+        GenerateMultipartRequestWrapper request =
+                new GenerateMultipartRequestWrapper(EncodeBarcodeType.PDF417, "test");
+        request.qrParams = buildQrParams();
+        request.code128Params = buildCode128Params();
+        request.pdf417Params = buildPdf417Params();
+
+        Request httpRequest = api.generateMultipartCall(request, null, null).request();
+        assertTrue(httpRequest.body() instanceof MultipartBody);
+        MultipartBody body = (MultipartBody) httpRequest.body();
+        String partHeaders =
+                body.parts().stream()
+                        .map(part -> part.headers().toString())
+                        .collect(Collectors.joining("\n"));
+
+        assertTrue(partHeaders.contains("name=\"qrEncodeMode\""));
+        assertTrue(partHeaders.contains("name=\"qrErrorLevel\""));
+        assertTrue(partHeaders.contains("name=\"qrVersion\""));
+        assertTrue(partHeaders.contains("name=\"qrECIEncoding\""));
+        assertTrue(partHeaders.contains("name=\"qrAspectRatio\""));
+        assertTrue(partHeaders.contains("name=\"microQRVersion\""));
+        assertTrue(partHeaders.contains("name=\"rectMicroQrVersion\""));
+        assertTrue(partHeaders.contains("name=\"code128EncodeMode\""));
+        assertTrue(partHeaders.contains("name=\"pdf417EncodeMode\""));
+        assertTrue(partHeaders.contains("name=\"pdf417ErrorLevel\""));
+        assertTrue(partHeaders.contains("name=\"pdf417Truncate\""));
+        assertTrue(partHeaders.contains("name=\"pdf417Columns\""));
+        assertTrue(partHeaders.contains("name=\"pdf417Rows\""));
+        assertTrue(partHeaders.contains("name=\"pdf417AspectRatio\""));
+        assertTrue(partHeaders.contains("name=\"pdf417ECIEncoding\""));
+        assertTrue(partHeaders.contains("name=\"pdf417IsReaderInitialization\""));
+        assertTrue(partHeaders.contains("name=\"pdf417MacroCharacters\""));
+        assertTrue(partHeaders.contains("name=\"pdf417IsLinked\""));
+        assertTrue(partHeaders.contains("name=\"pdf417IsCode128Emulation\""));
     }
 
     @Test
@@ -337,5 +434,39 @@ public class GenerateApiUnitTest {
     public void testGenerateMultipartAsync_CallsEnqueue() throws ApiException {
         api.generateMultipartAsync(
                 new GenerateMultipartRequestWrapper(EncodeBarcodeType.QR, "test"), NO_OP_CALLBACK);
+    }
+
+    private static QrParams buildQrParams() {
+        QrParams params = new QrParams();
+        params.setQrEncodeMode(QREncodeMode.AUTO);
+        params.setQrErrorLevel(QRErrorLevel.LEVEL_M);
+        params.setQrVersion(QRVersion.VERSION01);
+        params.setQrECIEncoding(ECIEncodings.UTF8);
+        params.setQrAspectRatio(0.75f);
+        params.setMicroQRVersion(MicroQRVersion.M2);
+        params.setRectMicroQrVersion(RectMicroQRVersion.R7X43);
+        return params;
+    }
+
+    private static Code128Params buildCode128Params() {
+        Code128Params params = new Code128Params();
+        params.setCode128EncodeMode(Code128EncodeMode.CODE_B);
+        return params;
+    }
+
+    private static Pdf417Params buildPdf417Params() {
+        Pdf417Params params = new Pdf417Params();
+        params.setPdf417EncodeMode(Pdf417EncodeMode.AUTO);
+        params.setPdf417ErrorLevel(Pdf417ErrorLevel.LEVEL2);
+        params.setPdf417Truncate(true);
+        params.setPdf417Columns(3);
+        params.setPdf417Rows(9);
+        params.setPdf417AspectRatio(3.0f);
+        params.setPdf417ECIEncoding(ECIEncodings.UTF8);
+        params.setPdf417IsReaderInitialization(false);
+        params.setPdf417MacroCharacters(MacroCharacter.MACRO05);
+        params.setPdf417IsLinked(false);
+        params.setPdf417IsCode128Emulation(false);
+        return params;
     }
 }
