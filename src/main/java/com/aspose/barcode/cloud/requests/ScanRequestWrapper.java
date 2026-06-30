@@ -28,20 +28,20 @@ package com.aspose.barcode.cloud.requests;
 import java.net.URI;
 
 /**
- * Scan barcode from file on server in the Internet using GET requests with parameter in query
- * string. For scaning files from your hard drive use `scan-body` or `scan-multipart` endpoints
+ * Scan a barcode from a file on an Internet server using a GET request with a query string
+ * parameter. For scanning files from your hard drive, use `scan-body` or `scan-multipart` endpoints
  * instead.
  */
 public class ScanRequestWrapper {
-    /** Url to barcode image. */
+    /** URL to the barcode image.. */
     public final URI fileUrl;
 
     /**
-     * Scan barcode from file on server in the Internet using GET requests with parameter in query
-     * string. For scaning files from your hard drive use `scan-body` or `scan-multipart` endpoints
-     * instead..
+     * Scan a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For scanning files from your hard drive, use `scan-body` or `scan-multipart`
+     * endpoints instead..
      *
-     * @param fileUrl Url to barcode image
+     * @param fileUrl URL to the barcode image.
      */
     public ScanRequestWrapper(URI fileUrl) {
         this.fileUrl = fileUrl;

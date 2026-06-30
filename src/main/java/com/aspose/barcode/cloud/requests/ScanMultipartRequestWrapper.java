@@ -27,15 +27,19 @@ package com.aspose.barcode.cloud.requests;
 
 import java.io.File;
 
-/** Scan barcode from file in request body using POST requests with parameter in multipart form. */
+/**
+ * Scan a barcode from a file in the request body using a POST request with a multipart form
+ * parameter.
+ */
 public class ScanMultipartRequestWrapper {
-    /** Barcode image file. */
+    /** Barcode image file.. */
     public final File file;
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in multipart form..
+     * Scan a barcode from a file in the request body using a POST request with a multipart form
+     * parameter..
      *
-     * @param file Barcode image file
+     * @param file Barcode image file.
      */
     public ScanMultipartRequestWrapper(File file) {
         this.file = file;

@@ -25,78 +25,41 @@
 
 package com.aspose.barcode.cloud.requests;
 
-import com.aspose.barcode.cloud.model.BarcodeImageFormat;
-import com.aspose.barcode.cloud.model.CodeLocation;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
+import com.aspose.barcode.cloud.model.Code128Params;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.EncodeDataType;
-import com.aspose.barcode.cloud.model.GraphicsUnit;
+import com.aspose.barcode.cloud.model.Pdf417Params;
+import com.aspose.barcode.cloud.model.QrParams;
 
-/** Generate barcode using GET request with parameters in route and query string. */
+/** Generate a barcode using a GET request with parameters in the route and query string. */
 public class GenerateRequestWrapper {
     /** Type of barcode to generate.. */
     public final EncodeBarcodeType barcodeType;
 
-    /** String represents data to encode. */
+    /** String that represents the data to encode.. */
     public final String data;
 
     /** Type of data to encode. Default value: StringData.. */
-    public EncodeDataType dataType;
+    public EncodeDataType dataType = EncodeDataType.fromValue("StringData");
 
-    /** Barcode output image format. Default value: png. */
-    public BarcodeImageFormat imageFormat;
+    /** Grouped BarcodeImageParams parameters. */
+    public BarcodeImageParams barcodeImageParams;
 
-    /**
-     * Specify the displaying Text Location, set to CodeLocation.None to hide CodeText. Default
-     * value: Depends on BarcodeType. CodeLocation.Below for 1D Barcodes. CodeLocation.None for 2D
-     * Barcodes..
-     */
-    public CodeLocation textLocation;
+    /** Grouped QrParams parameters. */
+    public QrParams qrParams;
 
-    /**
-     * Specify the displaying bars and content Color. Value: Color name from
-     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.
-     * For example: AliceBlue or #FF000000 Default value: Black..
-     */
-    public String foregroundColor = "Black";
+    /** Grouped Code128Params parameters. */
+    public Code128Params code128Params;
+
+    /** Grouped Pdf417Params parameters. */
+    public Pdf417Params pdf417Params;
 
     /**
-     * Background color of the barcode image. Value: Color name from
-     * https://reference.aspose.com/drawing/net/system.drawing/color/ or ARGB value started with #.
-     * For example: AliceBlue or #FF000000 Default value: White..
-     */
-    public String backgroundColor = "White";
-
-    /** Common Units for all measuring in query. Default units: pixel.. */
-    public GraphicsUnit units;
-
-    /**
-     * Resolution of the BarCode image. One value for both dimensions. Default value: 96 dpi.
-     * Decimal separator is dot..
-     */
-    public Float resolution;
-
-    /**
-     * Height of the barcode image in given units. Default units: pixel. Decimal separator is dot..
-     */
-    public Float imageHeight;
-
-    /**
-     * Width of the barcode image in given units. Default units: pixel. Decimal separator is dot..
-     */
-    public Float imageWidth;
-
-    /**
-     * BarCode image rotation angle, measured in degree, e.g. RotationAngle = 0 or RotationAngle =
-     * 360 means no rotation. If RotationAngle NOT equal to 90, 180, 270 or 0, it may increase the
-     * difficulty for the scanner to read the image. Default value: 0..
-     */
-    public Integer rotationAngle;
-
-    /**
-     * Generate barcode using GET request with parameters in route and query string..
+     * Generate a barcode using a GET request with parameters in the route and query string..
      *
      * @param barcodeType Type of barcode to generate.
-     * @param data String represents data to encode
+     * @param data String that represents the data to encode.
      */
     public GenerateRequestWrapper(EncodeBarcodeType barcodeType, String data) {
         this.barcodeType = barcodeType;

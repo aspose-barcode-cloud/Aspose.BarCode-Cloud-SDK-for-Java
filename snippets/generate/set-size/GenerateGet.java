@@ -1,5 +1,6 @@
 import com.aspose.barcode.cloud.ApiClient;
 import com.aspose.barcode.cloud.api.GenerateApi;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
 import com.aspose.barcode.cloud.model.GraphicsUnit;
 import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
@@ -25,10 +26,12 @@ public class GenerateGet {
         try {
             GenerateRequestWrapper request =
                     new GenerateRequestWrapper(EncodeBarcodeType.QR, "Aspose.BarCode.Cloud");
-            request.imageHeight = 200f;
-            request.imageWidth = 200f;
-            request.resolution = 300f;
-            request.units = GraphicsUnit.PIXEL;
+            BarcodeImageParams imageParams = new BarcodeImageParams();
+            imageParams.setImageHeight(200f);
+            imageParams.setImageWidth(200f);
+            imageParams.setResolution(300f);
+            imageParams.setUnits(GraphicsUnit.PIXEL);
+            request.barcodeImageParams = imageParams;
 
             File barcodeImage = generateApi.generate(request);
 

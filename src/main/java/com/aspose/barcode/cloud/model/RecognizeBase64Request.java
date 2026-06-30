@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** Barcode recognize request */
+/** Barcode recognition request. */
 public class RecognizeBase64Request {
     @SerializedName(value = "barcodeTypes")
     private List<DecodeBarcodeType> barcodeTypes = new ArrayList<>();
@@ -23,7 +23,7 @@ public class RecognizeBase64Request {
     /**
      * .
      *
-     * @param barcodeTypes Array of decode types to find on barcode
+     * @param barcodeTypes Array of barcode decode types to find.
      * @param fileBase64 Barcode image bytes encoded as base-64.
      */
     public RecognizeBase64Request(List<DecodeBarcodeType> barcodeTypes, String fileBase64) {
@@ -32,7 +32,7 @@ public class RecognizeBase64Request {
     }
 
     /**
-     * Array of decode types to find on barcode
+     * Array of barcode decode types to find.
      *
      * @return barcodeTypes
      */
@@ -58,7 +58,7 @@ public class RecognizeBase64Request {
     }
 
     /**
-     * Get recognitionMode
+     * Barcode recognition mode.
      *
      * @return recognitionMode
      */
@@ -71,7 +71,7 @@ public class RecognizeBase64Request {
     }
 
     /**
-     * Get recognitionImageKind
+     * Image kind for recognition.
      *
      * @return recognitionImageKind
      */

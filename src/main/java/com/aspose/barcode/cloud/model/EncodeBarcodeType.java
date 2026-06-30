@@ -7,7 +7,10 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** EncodeBarcodeType. See Aspose.BarCode.Generation.EncodeTypes */
+/**
+ * EncodeBarcodeType. See
+ * https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/
+ */
 @JsonAdapter(EncodeBarcodeType.Adapter.class)
 public enum EncodeBarcodeType {
     QR("QR"),

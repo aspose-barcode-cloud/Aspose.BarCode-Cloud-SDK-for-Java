@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** GraphicsUnit. Subset of Aspose.Drawing.GraphicsUnit. */
+/** GraphicsUnit. Subset of https://reference.aspose.com/drawing/net/system.drawing/graphicsunit/ */
 @JsonAdapter(GraphicsUnit.Adapter.class)
 public enum GraphicsUnit {
     PIXEL("Pixel"),

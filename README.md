@@ -5,7 +5,7 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 4.0
-- SDK version: 26.5.0
+- SDK version: 26.6.0
 
 ## SDK and API Version Compatibility:
 
@@ -77,7 +77,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>26.5.0</version>
+  <version>26.6.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -92,7 +92,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-26.5.0.jar`
+- `target/aspose-barcode-cloud-26.6.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -107,8 +107,13 @@ import com.aspose.barcode.cloud.ApiException;
 import com.aspose.barcode.cloud.api.GenerateApi;
 import com.aspose.barcode.cloud.api.ScanApi;
 import com.aspose.barcode.cloud.model.BarcodeImageFormat;
+import com.aspose.barcode.cloud.model.BarcodeImageParams;
 import com.aspose.barcode.cloud.model.BarcodeResponseList;
 import com.aspose.barcode.cloud.model.EncodeBarcodeType;
+import com.aspose.barcode.cloud.model.QREncodeMode;
+import com.aspose.barcode.cloud.model.QRErrorLevel;
+import com.aspose.barcode.cloud.model.QRVersion;
+import com.aspose.barcode.cloud.model.QrParams;
 import com.aspose.barcode.cloud.requests.GenerateRequestWrapper;
 import com.aspose.barcode.cloud.requests.ScanMultipartRequestWrapper;
 
@@ -143,7 +148,13 @@ public class Example {
         EncodeBarcodeType type = EncodeBarcodeType.QR;
         String text = "Aspose.BarCode for Cloud Sample";
         GenerateRequestWrapper request = new GenerateRequestWrapper(type, text);
-        request.imageFormat = BarcodeImageFormat.JPEG;
+        request.barcodeImageParams = new BarcodeImageParams();
+        request.barcodeImageParams.setImageFormat(BarcodeImageFormat.JPEG);
+        request.qrParams = new QrParams();
+        request.qrParams.setQrEncodeMode(QREncodeMode.AUTO);
+        request.qrParams.setQrErrorLevel(QRErrorLevel.LEVEL_M);
+        request.qrParams.setQrVersion(QRVersion.AUTO);
+        request.qrParams.setQrAspectRatio(0.75f);
 
         return api.generate(request);
     }
@@ -177,15 +188,15 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
-*GenerateApi* | [**generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate barcode using GET request with parameters in route and query string.
-*GenerateApi* | [**generateBody**](docs/GenerateApi.md#generateBody) | **POST** /barcode/generate-body | Generate barcode using POST request with parameters in body in json or xml format.
-*GenerateApi* | [**generateMultipart**](docs/GenerateApi.md#generateMultipart) | **POST** /barcode/generate-multipart | Generate barcode using POST request with parameters in multipart form.
-*RecognizeApi* | [**recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize barcode from file on server in the Internet using GET requests with parameter in query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
-*RecognizeApi* | [**recognizeBase64**](docs/RecognizeApi.md#recognizeBase64) | **POST** /barcode/recognize-body | Recognize barcode from file in request body using POST requests with parameters in body in json or xml format.
-*RecognizeApi* | [**recognizeMultipart**](docs/RecognizeApi.md#recognizeMultipart) | **POST** /barcode/recognize-multipart | Recognize barcode from file in request body using POST requests with parameters in multipart form.
-*ScanApi* | [**scan**](docs/ScanApi.md#scan) | **GET** /barcode/scan | Scan barcode from file on server in the Internet using GET requests with parameter in query string. For scaning files from your hard drive use &#x60;scan-body&#x60; or &#x60;scan-multipart&#x60; endpoints instead.
-*ScanApi* | [**scanBase64**](docs/ScanApi.md#scanBase64) | **POST** /barcode/scan-body | Scan barcode from file in request body using POST requests with parameter in body in json or xml format.
-*ScanApi* | [**scanMultipart**](docs/ScanApi.md#scanMultipart) | **POST** /barcode/scan-multipart | Scan barcode from file in request body using POST requests with parameter in multipart form.
+*GenerateApi* | [**generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+*GenerateApi* | [**generateBody**](docs/GenerateApi.md#generateBody) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
+*GenerateApi* | [**generateMultipart**](docs/GenerateApi.md#generateMultipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
+*RecognizeApi* | [**recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
+*RecognizeApi* | [**recognizeBase64**](docs/RecognizeApi.md#recognizeBase64) | **POST** /barcode/recognize-body | Recognize a barcode from a file in the request body using a POST request with JSON or XML body parameters.
+*RecognizeApi* | [**recognizeMultipart**](docs/RecognizeApi.md#recognizeMultipart) | **POST** /barcode/recognize-multipart | Recognize a barcode from a file in the request body using a POST request with multipart form parameters.
+*ScanApi* | [**scan**](docs/ScanApi.md#scan) | **GET** /barcode/scan | Scan a barcode from a file on an Internet server using a GET request with a query string parameter. For scanning files from your hard drive, use &#x60;scan-body&#x60; or &#x60;scan-multipart&#x60; endpoints instead.
+*ScanApi* | [**scanBase64**](docs/ScanApi.md#scanBase64) | **POST** /barcode/scan-body | Scan a barcode from a file in the request body using a POST request with a JSON or XML body parameter.
+*ScanApi* | [**scanMultipart**](docs/ScanApi.md#scanMultipart) | **POST** /barcode/scan-multipart | Scan a barcode from a file in the request body using a POST request with a multipart form parameter.
 
 ## Documentation for Models
 
@@ -195,16 +206,29 @@ Class | Method | HTTP request | Description
 - [BarcodeImageParams](docs/BarcodeImageParams.md)
 - [BarcodeResponse](docs/BarcodeResponse.md)
 - [BarcodeResponseList](docs/BarcodeResponseList.md)
+- [Code128EncodeMode](docs/Code128EncodeMode.md)
+- [Code128Params](docs/Code128Params.md)
 - [CodeLocation](docs/CodeLocation.md)
 - [DecodeBarcodeType](docs/DecodeBarcodeType.md)
+- [ECIEncodings](docs/ECIEncodings.md)
 - [EncodeBarcodeType](docs/EncodeBarcodeType.md)
 - [EncodeData](docs/EncodeData.md)
 - [EncodeDataType](docs/EncodeDataType.md)
 - [GenerateParams](docs/GenerateParams.md)
 - [GraphicsUnit](docs/GraphicsUnit.md)
+- [MacroCharacter](docs/MacroCharacter.md)
+- [MicroQRVersion](docs/MicroQRVersion.md)
+- [Pdf417EncodeMode](docs/Pdf417EncodeMode.md)
+- [Pdf417ErrorLevel](docs/Pdf417ErrorLevel.md)
+- [Pdf417Params](docs/Pdf417Params.md)
+- [QREncodeMode](docs/QREncodeMode.md)
+- [QRErrorLevel](docs/QRErrorLevel.md)
+- [QRVersion](docs/QRVersion.md)
+- [QrParams](docs/QrParams.md)
 - [RecognitionImageKind](docs/RecognitionImageKind.md)
 - [RecognitionMode](docs/RecognitionMode.md)
 - [RecognizeBase64Request](docs/RecognizeBase64Request.md)
+- [RectMicroQRVersion](docs/RectMicroQRVersion.md)
 - [RegionPoint](docs/RegionPoint.md)
 - [ScanBase64Request](docs/ScanBase64Request.md)
 

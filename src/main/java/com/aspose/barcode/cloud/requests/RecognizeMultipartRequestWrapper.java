@@ -32,28 +32,31 @@ import com.aspose.barcode.cloud.model.RecognitionMode;
 import java.io.File;
 
 /**
- * Recognize barcode from file in request body using POST requests with parameters in multipart
- * form.
+ * Recognize a barcode from a file in the request body using a POST request with multipart form
+ * parameters.
  */
 public class RecognizeMultipartRequestWrapper {
-    /** . */
+    /**
+     * See https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/.
+     */
     public final DecodeBarcodeType barcodeType;
 
-    /** Barcode image file. */
+    /** Barcode image file.. */
     public final File file;
 
-    /** . */
+    /** Recognition mode.. */
     public RecognitionMode recognitionMode;
 
-    /** . */
+    /** Image kind for recognition.. */
     public RecognitionImageKind recognitionImageKind;
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in multipart
-     * form..
+     * Recognize a barcode from a file in the request body using a POST request with multipart form
+     * parameters..
      *
-     * @param barcodeType Param of type DecodeBarcodeType
-     * @param file Barcode image file
+     * @param barcodeType See
+     *     https://reference.aspose.com/barcode/net/aspose.barcode.barcoderecognition/decodetype/
+     * @param file Barcode image file.
      */
     public RecognizeMultipartRequestWrapper(DecodeBarcodeType barcodeType, File file) {
         this.barcodeType = barcodeType;

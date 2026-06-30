@@ -164,8 +164,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file on server in the Internet using GET requests with parameter in
-     * query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or
+     * Recognize a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or
      * &#x60;recognize-multipart&#x60; endpoints instead.
      *
      * @param request See {@link RecognizeRequestWrapper}
@@ -179,8 +179,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file on server in the Internet using GET requests with parameter in
-     * query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or
+     * Recognize a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or
      * &#x60;recognize-multipart&#x60; endpoints instead.
      *
      * @param request See {@link RecognizeRequestWrapper}
@@ -196,8 +196,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file on server in the Internet using GET requests with parameter in
-     * query string. For recognizing files from your hard drive use &#x60;recognize-body&#x60; or
+     * Recognize a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or
      * &#x60;recognize-multipart&#x60; endpoints instead. (asynchronously)
      *
      * @param request See {@link RecognizeRequestWrapper}
@@ -325,8 +325,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in body in
-     * json or xml format.
+     * Recognize a barcode from a file in the request body using a POST request with JSON or XML
+     * body parameters.
      *
      * @param request See {@link RecognizeBase64RequestWrapper}
      * @return BarcodeResponseList
@@ -340,8 +340,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in body in
-     * json or xml format.
+     * Recognize a barcode from a file in the request body using a POST request with JSON or XML
+     * body parameters.
      *
      * @param request See {@link RecognizeBase64RequestWrapper}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -356,8 +356,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in body in
-     * json or xml format. (asynchronously)
+     * Recognize a barcode from a file in the request body using a POST request with JSON or XML
+     * body parameters. (asynchronously)
      *
      * @param request See {@link RecognizeBase64RequestWrapper}
      * @param callback The callback to be executed when the API call finishes
@@ -509,8 +509,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in multipart
-     * form.
+     * Recognize a barcode from a file in the request body using a POST request with multipart form
+     * parameters.
      *
      * @param request See {@link RecognizeMultipartRequestWrapper}
      * @return BarcodeResponseList
@@ -524,8 +524,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in multipart
-     * form.
+     * Recognize a barcode from a file in the request body using a POST request with multipart form
+     * parameters.
      *
      * @param request See {@link RecognizeMultipartRequestWrapper}
      * @return ApiResponse&lt;BarcodeResponseList&gt;
@@ -540,8 +540,8 @@ public class RecognizeApi {
     }
 
     /**
-     * Recognize barcode from file in request body using POST requests with parameters in multipart
-     * form. (asynchronously)
+     * Recognize a barcode from a file in the request body using a POST request with multipart form
+     * parameters. (asynchronously)
      *
      * @param request See {@link RecognizeMultipartRequestWrapper}
      * @param callback The callback to be executed when the API call finishes

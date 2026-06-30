@@ -86,7 +86,7 @@ public class ApiError {
     }
 
     /**
-     * Get innerError
+     * Gets or sets inner error.
      *
      * @return innerError
      */

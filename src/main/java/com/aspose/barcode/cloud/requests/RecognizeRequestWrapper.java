@@ -32,30 +32,30 @@ import com.aspose.barcode.cloud.model.RecognitionMode;
 import java.net.URI;
 
 /**
- * Recognize barcode from file on server in the Internet using GET requests with parameter in query
- * string. For recognizing files from your hard drive use `recognize-body` or `recognize-multipart`
- * endpoints instead.
+ * Recognize a barcode from a file on an Internet server using a GET request with a query string
+ * parameter. For recognizing files from your hard drive, use `recognize-body` or
+ * `recognize-multipart` endpoints instead.
  */
 public class RecognizeRequestWrapper {
-    /** Type of barcode to recognize. */
+    /** Type of barcode to recognize.. */
     public final DecodeBarcodeType barcodeType;
 
-    /** Url to barcode image. */
+    /** URL to the barcode image.. */
     public final URI fileUrl;
 
-    /** Recognition mode. */
+    /** Recognition mode.. */
     public RecognitionMode recognitionMode;
 
-    /** Image kind for recognition. */
+    /** Image kind for recognition.. */
     public RecognitionImageKind recognitionImageKind;
 
     /**
-     * Recognize barcode from file on server in the Internet using GET requests with parameter in
-     * query string. For recognizing files from your hard drive use `recognize-body` or
+     * Recognize a barcode from a file on an Internet server using a GET request with a query string
+     * parameter. For recognizing files from your hard drive, use `recognize-body` or
      * `recognize-multipart` endpoints instead..
      *
-     * @param barcodeType Type of barcode to recognize
-     * @param fileUrl Url to barcode image
+     * @param barcodeType Type of barcode to recognize.
+     * @param fileUrl URL to the barcode image.
      */
     public RecognizeRequestWrapper(DecodeBarcodeType barcodeType, URI fileUrl) {
         this.barcodeType = barcodeType;

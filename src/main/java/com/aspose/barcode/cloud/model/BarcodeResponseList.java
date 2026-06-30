@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 import java.util.Objects;
 
-/** Represents information about barcode list. */
+/** Represents information about a barcode list. */
 public class BarcodeResponseList {
     @SerializedName(value = "barcodes")
     private List<BarcodeResponse> barcodes;
@@ -13,14 +13,14 @@ public class BarcodeResponseList {
     /**
      * .
      *
-     * @param barcodes List of barcodes which are present in image.
+     * @param barcodes List of barcodes that are present in the image.
      */
     public BarcodeResponseList(List<BarcodeResponse> barcodes) {
         this.barcodes = barcodes;
     }
 
     /**
-     * List of barcodes which are present in image.
+     * List of barcodes that are present in the image.
      *
      * @return barcodes
      */

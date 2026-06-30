@@ -27,7 +27,7 @@ jobs:
       - name: Maven Compile
         run: mvn compile
 
-      - name: Test with Maven
+      - name: Test with Maven and enforce library coverage
         env:
           TEST_CONFIGURATION_ACCESS_TOKEN: ${{ secrets.TEST_CONFIGURATION_ACCESS_TOKEN }}
         run: |

@@ -7,7 +7,7 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
-/** EncodeDataType. Types of data can be encoded to barcode */
+/** EncodeDataType. Types of data that can be encoded into a barcode. */
 @JsonAdapter(EncodeDataType.Adapter.class)
 public enum EncodeDataType {
     STRING_DATA("StringData"),

@@ -6,7 +6,7 @@
     <artifactId>aspose-barcode-cloud</artifactId>
     <packaging>jar</packaging>
     <name>aspose-barcode-cloud</name>
-    <version>26.5.0</version>
+    <version>26.6.0</version>
     <url>https://www.aspose.cloud</url>
     <description>Aspose.BarCode Cloud SDK for Java</description>
     <scm>
@@ -168,15 +168,10 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>CLASS</element>
-                                    <includes>
-                                        <include>com.aspose.barcode.cloud.api.GenerateApi</include>
-                                        <include>com.aspose.barcode.cloud.api.RecognizeApi</include>
-                                        <include>com.aspose.barcode.cloud.api.ScanApi</include>
-                                    </includes>
+                                    <element>BUNDLE</element>
                                     <limits>
                                         <limit>
-                                            <counter>METHOD</counter>
+                                            <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>0.81</minimum>
                                         </limit>

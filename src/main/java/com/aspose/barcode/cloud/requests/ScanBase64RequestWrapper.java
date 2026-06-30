@@ -28,18 +28,18 @@ package com.aspose.barcode.cloud.requests;
 import com.aspose.barcode.cloud.model.ScanBase64Request;
 
 /**
- * Scan barcode from file in request body using POST requests with parameter in body in json or xml
- * format.
+ * Scan a barcode from a file in the request body using a POST request with a JSON or XML body
+ * parameter.
  */
 public class ScanBase64RequestWrapper {
-    /** . */
+    /** Scan barcode request.. */
     public final ScanBase64Request scanBase64Request;
 
     /**
-     * Scan barcode from file in request body using POST requests with parameter in body in json or
-     * xml format..
+     * Scan a barcode from a file in the request body using a POST request with a JSON or XML body
+     * parameter..
      *
-     * @param scanBase64Request Param of type ScanBase64Request
+     * @param scanBase64Request Scan barcode request.
      */
     public ScanBase64RequestWrapper(ScanBase64Request scanBase64Request) {
         this.scanBase64Request = scanBase64Request;

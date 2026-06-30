@@ -11,7 +11,7 @@
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-barcode-cloud</artifactId>
-        <version>26.5.0</version>
+        <version>26.6.0</version>
     </dependency>
     <!-- Add other dependencies here -->
 </dependencies>
