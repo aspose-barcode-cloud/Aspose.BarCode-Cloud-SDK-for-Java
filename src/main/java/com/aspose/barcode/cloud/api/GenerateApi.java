@@ -201,10 +201,10 @@ public class GenerateApi {
                             "pdf417ErrorLevel", request.pdf417Params.getPdf417ErrorLevel()));
         }
 
-        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417Truncate() != null) {
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417Truncate() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
-                            "pdf417Truncate", request.pdf417Params.isgetPdf417Truncate()));
+                            "pdf417Truncate", request.pdf417Params.getPdf417Truncate()));
         }
 
         if (request.pdf417Params != null && request.pdf417Params.getPdf417Columns() != null) {
@@ -231,11 +231,11 @@ public class GenerateApi {
         }
 
         if (request.pdf417Params != null
-                && request.pdf417Params.isgetPdf417IsReaderInitialization() != null) {
+                && request.pdf417Params.getPdf417IsReaderInitialization() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "pdf417IsReaderInitialization",
-                            request.pdf417Params.isgetPdf417IsReaderInitialization()));
+                            request.pdf417Params.getPdf417IsReaderInitialization()));
         }
 
         if (request.pdf417Params != null
@@ -246,18 +246,18 @@ public class GenerateApi {
                             request.pdf417Params.getPdf417MacroCharacters()));
         }
 
-        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417IsLinked() != null) {
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417IsLinked() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
-                            "pdf417IsLinked", request.pdf417Params.isgetPdf417IsLinked()));
+                            "pdf417IsLinked", request.pdf417Params.getPdf417IsLinked()));
         }
 
         if (request.pdf417Params != null
-                && request.pdf417Params.isgetPdf417IsCode128Emulation() != null) {
+                && request.pdf417Params.getPdf417IsCode128Emulation() != null) {
             queryParams.addAll(
                     apiClient.parameterToPair(
                             "pdf417IsCode128Emulation",
-                            request.pdf417Params.isgetPdf417IsCode128Emulation()));
+                            request.pdf417Params.getPdf417IsCode128Emulation()));
         }
 
         Map<String, String> headerParams = new HashMap<>();
@@ -698,8 +698,8 @@ public class GenerateApi {
             formParams.put("pdf417ErrorLevel", request.pdf417Params.getPdf417ErrorLevel());
         }
 
-        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417Truncate() != null) {
-            formParams.put("pdf417Truncate", request.pdf417Params.isgetPdf417Truncate());
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417Truncate() != null) {
+            formParams.put("pdf417Truncate", request.pdf417Params.getPdf417Truncate());
         }
 
         if (request.pdf417Params != null && request.pdf417Params.getPdf417Columns() != null) {
@@ -719,10 +719,10 @@ public class GenerateApi {
         }
 
         if (request.pdf417Params != null
-                && request.pdf417Params.isgetPdf417IsReaderInitialization() != null) {
+                && request.pdf417Params.getPdf417IsReaderInitialization() != null) {
             formParams.put(
                     "pdf417IsReaderInitialization",
-                    request.pdf417Params.isgetPdf417IsReaderInitialization());
+                    request.pdf417Params.getPdf417IsReaderInitialization());
         }
 
         if (request.pdf417Params != null
@@ -731,15 +731,15 @@ public class GenerateApi {
                     "pdf417MacroCharacters", request.pdf417Params.getPdf417MacroCharacters());
         }
 
-        if (request.pdf417Params != null && request.pdf417Params.isgetPdf417IsLinked() != null) {
-            formParams.put("pdf417IsLinked", request.pdf417Params.isgetPdf417IsLinked());
+        if (request.pdf417Params != null && request.pdf417Params.getPdf417IsLinked() != null) {
+            formParams.put("pdf417IsLinked", request.pdf417Params.getPdf417IsLinked());
         }
 
         if (request.pdf417Params != null
-                && request.pdf417Params.isgetPdf417IsCode128Emulation() != null) {
+                && request.pdf417Params.getPdf417IsCode128Emulation() != null) {
             formParams.put(
                     "pdf417IsCode128Emulation",
-                    request.pdf417Params.isgetPdf417IsCode128Emulation());
+                    request.pdf417Params.getPdf417IsCode128Emulation());
         }
 
         final String[] accepts = {

@@ -73,7 +73,7 @@ public class Pdf417Params {
      *
      * @return pdf417Truncate
      */
-    public Boolean isgetPdf417Truncate() {
+    public Boolean getPdf417Truncate() {
         return pdf417Truncate;
     }
 
@@ -141,7 +141,7 @@ public class Pdf417Params {
      *
      * @return pdf417IsReaderInitialization
      */
-    public Boolean isgetPdf417IsReaderInitialization() {
+    public Boolean getPdf417IsReaderInitialization() {
         return pdf417IsReaderInitialization;
     }
 
@@ -167,7 +167,7 @@ public class Pdf417Params {
      *
      * @return pdf417IsLinked
      */
-    public Boolean isgetPdf417IsLinked() {
+    public Boolean getPdf417IsLinked() {
         return pdf417IsLinked;
     }
 
@@ -180,7 +180,7 @@ public class Pdf417Params {
      *
      * @return pdf417IsCode128Emulation
      */
-    public Boolean isgetPdf417IsCode128Emulation() {
+    public Boolean getPdf417IsCode128Emulation() {
         return pdf417IsCode128Emulation;
     }
 

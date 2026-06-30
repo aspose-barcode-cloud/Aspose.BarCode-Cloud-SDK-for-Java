@@ -129,7 +129,7 @@ public class GeneratedModelCoverageTest {
         if (method.getParameterCount() != 0 || method.getDeclaringClass().equals(Object.class)) {
             return false;
         }
-        return method.getName().startsWith("get") || method.getName().startsWith("isget");
+        return method.getName().startsWith("get");
     }
 
     private static Object newModel(Class<?> type, int variant) {
