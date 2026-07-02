@@ -738,8 +738,7 @@ public class GenerateApi {
         if (request.pdf417Params != null
                 && request.pdf417Params.getPdf417IsCode128Emulation() != null) {
             formParams.put(
-                    "pdf417IsCode128Emulation",
-                    request.pdf417Params.getPdf417IsCode128Emulation());
+                    "pdf417IsCode128Emulation", request.pdf417Params.getPdf417IsCode128Emulation());
         }
 
         final String[] accepts = {
