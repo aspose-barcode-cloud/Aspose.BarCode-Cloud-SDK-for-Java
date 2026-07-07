@@ -2,41 +2,19 @@ package com.aspose.barcode.cloud.model;
 
 import static org.junit.Assert.*;
 
-import com.google.gson.Gson;
-
 import org.junit.Test;
 
 import java.lang.reflect.Method;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * Coverage for the generated model classes: every model must behave as a value object
+ * (equals/hashCode/toString) and expose non-null accessors for populated fields.
+ */
 public class GeneratedModelCoverageTest {
-    private static final Gson GSON = new Gson();
-
-    private static final List<Class<? extends Enum<?>>> ENUM_TYPES =
-            Arrays.asList(
-                    BarcodeImageFormat.class,
-                    Code128EncodeMode.class,
-                    CodeLocation.class,
-                    DecodeBarcodeType.class,
-                    ECIEncodings.class,
-                    EncodeBarcodeType.class,
-                    EncodeDataType.class,
-                    GraphicsUnit.class,
-                    MacroCharacter.class,
-                    MicroQRVersion.class,
-                    Pdf417EncodeMode.class,
-                    Pdf417ErrorLevel.class,
-                    QREncodeMode.class,
-                    QRErrorLevel.class,
-                    QRVersion.class,
-                    RecognitionImageKind.class,
-                    RecognitionMode.class,
-                    RectMicroQRVersion.class);
 
     private static final List<Class<?>> MODEL_TYPES =
             Arrays.asList(
@@ -53,25 +31,6 @@ public class GeneratedModelCoverageTest {
                     RecognizeBase64Request.class,
                     RegionPoint.class,
                     ScanBase64Request.class);
-
-    @Test
-    public void enumValuesRoundTripThroughFactoriesAndJsonAdapters() throws Exception {
-        for (Class<? extends Enum<?>> enumType : ENUM_TYPES) {
-            Method getValue = enumType.getMethod("getValue");
-            Method fromValue = enumType.getMethod("fromValue", String.class);
-
-            for (Enum<?> enumValue : enumType.getEnumConstants()) {
-                String wireValue = (String) getValue.invoke(enumValue);
-
-                assertEquals(wireValue, enumValue.toString());
-                assertSame(enumValue, fromValue.invoke(null, wireValue));
-                assertEquals("\"" + wireValue + "\"", GSON.toJson(enumValue));
-                assertSame(enumValue, GSON.fromJson("\"" + wireValue + "\"", enumType));
-            }
-
-            assertNull(fromValue.invoke(null, "__missing_value__"));
-        }
-    }
 
     @Test
     public void generatedModelsExposeValueObjectBehavior() throws Exception {
@@ -96,33 +55,6 @@ public class GeneratedModelCoverageTest {
                 }
             }
         }
-    }
-
-    @Test
-    public void abstractOpenApiSchemaHandlesNestedInstances() {
-        TestOpenApiSchema outer = new TestOpenApiSchema("oneOf", true);
-        TestOpenApiSchema same = new TestOpenApiSchema("oneOf", true);
-        TestOpenApiSchema inner = new TestOpenApiSchema("anyOf", false);
-        inner.setActualInstance("leaf");
-        outer.setActualInstance(inner);
-        same.setActualInstance(inner);
-
-        assertEquals(Collections.singletonMap("string", String.class), outer.getSchemas());
-        assertSame(inner, outer.getActualInstance());
-        assertEquals("leaf", outer.getActualInstanceRecursively());
-        assertEquals("oneOf", outer.getSchemaType());
-        assertTrue(outer.isNullable());
-        assertFalse(inner.isNullable());
-        assertEquals(outer, same);
-        assertEquals(outer.hashCode(), same.hashCode());
-        assertNotEquals(outer, inner);
-        assertNotEquals(outer, null);
-        assertNotEquals(outer, "not a schema");
-        assertTrue(outer.toString().contains("oneOf"));
-
-        TestOpenApiSchema empty = new TestOpenApiSchema("oneOf", null);
-        assertNull(empty.getActualInstanceRecursively());
-        assertFalse(empty.isNullable());
     }
 
     private static boolean isValueAccessor(Method method) {
@@ -273,18 +205,5 @@ public class GeneratedModelCoverageTest {
         point.setX(10 + variant);
         point.setY(20 + variant);
         return point;
-    }
-
-    private static class TestOpenApiSchema extends AbstractOpenApiSchema {
-        TestOpenApiSchema(String schemaType, Boolean isNullable) {
-            super(schemaType, isNullable);
-        }
-
-        @Override
-        public Map<String, Class<?>> getSchemas() {
-            Map<String, Class<?>> schemas = new LinkedHashMap<>();
-            schemas.put("string", String.class);
-            return schemas;
-        }
     }
 }

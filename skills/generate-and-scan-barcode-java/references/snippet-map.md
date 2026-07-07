@@ -37,6 +37,11 @@ Use this reference when you want the closest existing pattern before writing new
 - `src/test/java/com/aspose/barcode/cloud/test/ScanApiTest.java`: scan via base64 body, multipart, and URL.
 - `src/test/java/com/aspose/barcode/cloud/test/ConfigurationTest.java`: configuration defaults and `buildApiClient()` behavior.
 - `src/test/java/com/aspose/barcode/cloud/test/ExceptionTest.java`: expected failures and exception behavior.
-- `src/test/java/com/aspose/barcode/cloud/api/GenerateApiUnitTest.java`: request validation and generated request-path behavior.
-- `src/test/java/com/aspose/barcode/cloud/api/RecognizeApiUnitTest.java`: recognize request validation, request-path behavior, and async wiring.
+- `src/test/java/com/aspose/barcode/cloud/api/GenerateApiValidationUnitTest.java`: generate request validation.
+- `src/test/java/com/aspose/barcode/cloud/api/GenerateApiRequestUnitTest.java`: generated request-path, query-parameter, and header behavior.
+- `src/test/java/com/aspose/barcode/cloud/api/GenerateApiBodyUnitTest.java`: generate request content types and payload serialization.
+- `src/test/java/com/aspose/barcode/cloud/api/GenerateApiMethodCoverageUnitTest.java`: generate sync/async method wiring.
+- `src/test/java/com/aspose/barcode/cloud/api/RecognizeApiValidationUnitTest.java`: recognize request validation.
+- `src/test/java/com/aspose/barcode/cloud/api/RecognizeApiRequestUnitTest.java`: recognize request-path, query-parameter, and content-type behavior.
+- `src/test/java/com/aspose/barcode/cloud/api/RecognizeApiMethodCoverageUnitTest.java`: recognize sync/async method wiring.
 - `src/test/java/com/aspose/barcode/cloud/api/ScanApiUnitTest.java`: scan request validation, request-path behavior, and async wiring.
