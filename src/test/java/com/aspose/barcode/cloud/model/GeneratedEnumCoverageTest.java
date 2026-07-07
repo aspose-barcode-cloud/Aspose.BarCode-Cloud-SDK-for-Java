@@ -11,8 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Coverage for the generated enum types: every constant must round-trip through the generated {@code
- * getValue}/{@code fromValue} factories and through Gson serialization/deserialization.
+ * Coverage for the generated enum types: every constant must round-trip through the generated
+ * {@code getValue}/{@code fromValue} factories and through Gson serialization/deserialization.
  */
 public class GeneratedEnumCoverageTest {
     private static final Gson GSON = new Gson();

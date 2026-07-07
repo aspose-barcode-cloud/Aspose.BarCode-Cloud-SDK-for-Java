@@ -17,8 +17,8 @@ import java.io.File;
 import java.net.URI;
 
 /**
- * Offline unit tests for {@link ScanApi} request building: paths, HTTP methods, query parameters and
- * headers.
+ * Offline unit tests for {@link ScanApi} request building: paths, HTTP methods, query parameters
+ * and headers.
  */
 public class ScanApiRequestUnitTest {
 
