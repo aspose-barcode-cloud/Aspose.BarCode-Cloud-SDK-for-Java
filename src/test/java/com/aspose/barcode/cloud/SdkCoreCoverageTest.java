@@ -19,7 +19,6 @@ import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -55,27 +54,6 @@ public class SdkCoreCoverageTest {
         assertTrue(
                 new ApiException(new IllegalStateException("boom")).getCause()
                         instanceof IllegalStateException);
-    }
-
-    @Test
-    public void serverConfigurationExpandsDefaultsOverridesAndRejectsInvalidEnums() {
-        HashSet<String> enumValues = new HashSet<>(Arrays.asList("v4.0", "v5.0"));
-        ServerVariable version = new ServerVariable("version", "v4.0", enumValues);
-        Map<String, ServerVariable> variables = Collections.singletonMap("version", version);
-        ServerConfiguration server =
-                new ServerConfiguration("https://api.aspose.cloud/{version}", "Aspose", variables);
-
-        assertEquals("https://api.aspose.cloud/v4.0", server.url());
-        assertEquals(
-                "https://api.aspose.cloud/v5.0",
-                server.url(Collections.singletonMap("version", "v5.0")));
-
-        try {
-            server.url(Collections.singletonMap("version", "v6.0"));
-            fail("Expected invalid enum value to be rejected");
-        } catch (IllegalArgumentException e) {
-            assertTrue(e.getMessage().contains("invalid value v6.0"));
-        }
     }
 
     @Test

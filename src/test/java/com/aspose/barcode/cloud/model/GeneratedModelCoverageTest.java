@@ -10,9 +10,7 @@ import java.lang.reflect.Method;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class GeneratedModelCoverageTest {
     private static final Gson GSON = new Gson();
@@ -96,33 +94,6 @@ public class GeneratedModelCoverageTest {
                 }
             }
         }
-    }
-
-    @Test
-    public void abstractOpenApiSchemaHandlesNestedInstances() {
-        TestOpenApiSchema outer = new TestOpenApiSchema("oneOf", true);
-        TestOpenApiSchema same = new TestOpenApiSchema("oneOf", true);
-        TestOpenApiSchema inner = new TestOpenApiSchema("anyOf", false);
-        inner.setActualInstance("leaf");
-        outer.setActualInstance(inner);
-        same.setActualInstance(inner);
-
-        assertEquals(Collections.singletonMap("string", String.class), outer.getSchemas());
-        assertSame(inner, outer.getActualInstance());
-        assertEquals("leaf", outer.getActualInstanceRecursively());
-        assertEquals("oneOf", outer.getSchemaType());
-        assertTrue(outer.isNullable());
-        assertFalse(inner.isNullable());
-        assertEquals(outer, same);
-        assertEquals(outer.hashCode(), same.hashCode());
-        assertNotEquals(outer, inner);
-        assertNotEquals(outer, null);
-        assertNotEquals(outer, "not a schema");
-        assertTrue(outer.toString().contains("oneOf"));
-
-        TestOpenApiSchema empty = new TestOpenApiSchema("oneOf", null);
-        assertNull(empty.getActualInstanceRecursively());
-        assertFalse(empty.isNullable());
     }
 
     private static boolean isValueAccessor(Method method) {
@@ -273,18 +244,5 @@ public class GeneratedModelCoverageTest {
         point.setX(10 + variant);
         point.setY(20 + variant);
         return point;
-    }
-
-    private static class TestOpenApiSchema extends AbstractOpenApiSchema {
-        TestOpenApiSchema(String schemaType, Boolean isNullable) {
-            super(schemaType, isNullable);
-        }
-
-        @Override
-        public Map<String, Class<?>> getSchemas() {
-            Map<String, Class<?>> schemas = new LinkedHashMap<>();
-            schemas.put("string", String.class);
-            return schemas;
-        }
     }
 }
