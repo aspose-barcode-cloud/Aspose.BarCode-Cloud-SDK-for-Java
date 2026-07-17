@@ -29,7 +29,7 @@ public class RecognizeGet {
                             new RecognizeRequestWrapper(
                                     DecodeBarcodeType.MOST_COMMONLY_USED,
                                     new URI(
-                                            "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png")));
+                                            "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Java/main/test_data/QR_and_Code128.png")));
 
             System.out.print("Barcode value: ");
             System.out.println(response.getBarcodes().get(0).getBarcodeValue());

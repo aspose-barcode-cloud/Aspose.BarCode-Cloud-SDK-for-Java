@@ -26,7 +26,7 @@ public class ScanGet {
             ScanRequestWrapper ScanRequestWrapper =
                     new ScanRequestWrapper(
                             new URI(
-                                    "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
+                                    "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Java/main/test_data/QR_and_Code128.png"));
 
             BarcodeResponseList scanResponse = scanApi.scan(ScanRequestWrapper);
 

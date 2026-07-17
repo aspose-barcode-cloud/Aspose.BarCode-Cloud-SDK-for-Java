@@ -46,13 +46,13 @@ public class RecognizeApiTest extends TestBase {
                         new RecognizeRequestWrapper(
                                 DecodeBarcodeType.QR,
                                 new URI(
-                                        "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png")));
+                                        "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Java/main/test_data/QR_and_Code128.png")));
 
         assertNotNull(response);
         assertEquals(1, response.getBarcodes().size());
         BarcodeResponse barcode = response.getBarcodes().get(0);
         assertEquals(DecodeBarcodeType.QR.toString(), barcode.getType());
-        assertEquals("http://en.m.wikipedia.org", barcode.getBarcodeValue());
+        assertEquals("Hello world!", barcode.getBarcodeValue());
     }
 
     @Test

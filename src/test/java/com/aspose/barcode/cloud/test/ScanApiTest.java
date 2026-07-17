@@ -77,13 +77,15 @@ public class ScanApiTest extends TestBase {
         ScanRequestWrapper ScanRequestWrapper =
                 new ScanRequestWrapper(
                         new URI(
-                                "https://products.aspose.app/barcode/scan/img/how-to/scan/step2.png"));
+                                "https://raw.githubusercontent.com/aspose-barcode-cloud/Aspose.BarCode-Cloud-SDK-for-Java/main/test_data/QR_and_Code128.png"));
 
         BarcodeResponseList response = api.scan(ScanRequestWrapper);
         assertNotNull(response);
 
-        assertEquals(1, response.getBarcodes().size());
+        assertEquals(2, response.getBarcodes().size());
         assertEquals(DecodeBarcodeType.QR.toString(), response.getBarcodes().get(0).getType());
-        assertEquals("http://en.m.wikipedia.org", response.getBarcodes().get(0).getBarcodeValue());
+        assertEquals("Hello world!", response.getBarcodes().get(0).getBarcodeValue());
+        assertEquals(DecodeBarcodeType.CODE128.toString(), response.getBarcodes().get(1).getType());
+        assertEquals("Hello world!", response.getBarcodes().get(1).getBarcodeValue());
     }
 }
