@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: test with Java version ${{ matrix.java-version }}
@@ -16,6 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: Set up JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v5
         with:
@@ -36,11 +45,14 @@ jobs:
           make test
 
   android-test:
+    name: Android test
     needs: test
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-java@v5
         with:
@@ -48,7 +60,7 @@ jobs:
           java-version: 17
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
+        uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5.0.2
 
       - name: Build Java library JAR
         run: mvn package -Dmaven.test.skip=true
