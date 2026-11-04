@@ -11,7 +11,7 @@ rm -rf "${RUN_DIR}" || true
 mkdir -p "${RUN_DIR}"
 
 pushd ${RUN_DIR}
-ln -sv -F "../target" .
+ln -sv "../target" .
 popd
 
 for file in $(find "${SNIPPETS_DIR}" -name "*.java"); do
