@@ -8,6 +8,7 @@
 # build files
 **/target
 build
+/coverage/
 aspose-barcode-cloud.iml
 !tools/*
 !**/gradle-wrapper.jar
