@@ -22,10 +22,19 @@ build:
 	mvn dependency:copy-dependencies -DoutputDirectory=target/lib/
 
 .PHONY: test
-test:
-	mvn test
+test: cover
 	mvn dependency:copy-dependencies -DoutputDirectory=target/lib/
 	./scripts/run_snippets.sh
+
+# `mvn test` enforces the 80% line gate with jacoco:check (see pom.xml); the shared
+# scripts/coverage.py prints the percentage, applies COVERAGE_THRESHOLD (default 80)
+# and writes coverage/coverage-{badge,summary}.json.
+.PHONY: cover
+cover:
+	mvn test
+	mkdir -p coverage
+	cp target/site/jacoco/jacoco.xml coverage/jacoco.xml
+	python3 scripts/coverage.py jacoco coverage/jacoco.xml
 
 .PHONY: display-updates
 display-updates:
