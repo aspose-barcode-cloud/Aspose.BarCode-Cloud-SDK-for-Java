@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     name: test with Java version ${{ matrix.java-version }}
@@ -34,6 +37,16 @@ jobs:
           chmod +x scripts/*
           make build
           make test
+
+      - name: Upload coverage report
+        if: matrix.java-version == 21
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage
+          path: |
+            coverage/coverage-badge.json
+            coverage/coverage-summary.json
+            coverage/jacoco.xml
 
   android-test:
     needs: test
@@ -75,3 +88,34 @@ jobs:
         run: >
           ./gradlew pixel2api30DebugAndroidTest
           -Pandroid.testoptions.manageddevices.emulator.gpu=swiftshader_indirect
+
+  publish-coverage:
+    name: Publish coverage
+    needs: test
+    # Only pushes to the default branch publish, and only once the GitHub App for
+    # the test-coverage repository is configured (COVERAGE_APP_ID variable).
+    if: github.event_name == 'push' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch) && vars.COVERAGE_APP_ID != ''
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v8
+        with:
+          name: coverage
+          path: coverage
+      - name: Get a token for the test-coverage repository
+        id: coverage-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.COVERAGE_APP_ID }}
+          private-key: ${{ secrets.COVERAGE_APP_PRIVATE_KEY }}
+          owner: aspose-barcode-cloud
+          repositories: test-coverage
+          permission-contents: write
+      - name: Publish to test-coverage
+        run: python scripts/publish-coverage.py java
+        env:
+          COVERAGE_TOKEN: ${{ steps.coverage-token.outputs.token }}
+          COVERAGE_APP_SLUG: ${{ steps.coverage-token.outputs.app-slug }}
