@@ -157,7 +157,9 @@ public enum EncodeBarcodeType {
 
     UPCA_GS1_DATABAR_COUPON("UpcaGs1DatabarCoupon"),
 
-    VIN("VIN");
+    VIN("VIN"),
+
+    JAPAN_POST("JapanPost");
 
     private final String value;
 

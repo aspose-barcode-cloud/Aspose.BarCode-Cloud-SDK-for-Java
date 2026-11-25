@@ -6,12 +6,24 @@
 [![Maven metadata URL](https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Freleases.aspose.cloud%2Fjava%2Frepo%2Fcom%2Faspose%2Faspose-barcode-cloud%2Fmaven-metadata.xml)](https://releases.aspose.cloud/java/repo/com/aspose/aspose-barcode-cloud/)
 
 - API version: 4.0
-- SDK version: 26.10.0
+- SDK version: 26.11.0
 
 ## SDK and API Version Compatibility:
 
 - SDK Version 25.1 and Later: Starting from SDK version 25.1, all subsequent versions are compatible with API Version v4.0.
 - SDK Version 24.12 and Earlier: These versions are compatible with API Version v3.0.
+
+## Batch Generation
+
+Generate one to three barcodes in a single request with the Generate API and
+`BatchGenerateRequest`. Choose `Zip` (the default), `Tar` or `TarGzip`
+for the returned binary archive. Each item contains generation parameters and an optional
+file name; the image format is independent of the file extension.
+
+[Save a batch as a ZIP archive](snippets/generate/batch/GenerateBatch.java).
+The example reads `TEST_CONFIGURATION_ACCESS_TOKEN` from the environment.
+
+The barcode-type enums also include `JapanPost` for generation and recognition.
 
 ## Demo applications
 
@@ -78,7 +90,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.aspose</groupId>
   <artifactId>aspose-barcode-cloud</artifactId>
-  <version>26.10.0</version>
+  <version>26.11.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -93,7 +105,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-- `target/aspose-barcode-cloud-26.10.0.jar`
+- `target/aspose-barcode-cloud-26.11.0.jar`
 - `target/lib/*.jar`
 
 ## Getting Started
@@ -190,6 +202,7 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 Class | Method | HTTP request | Description
 ----- | ------ | ------------ | -----------
 *GenerateApi* | [**generate**](docs/GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+*GenerateApi* | [**generateBatch**](docs/GenerateApi.md#generateBatch) | **POST** /barcode/generate-batch | Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
 *GenerateApi* | [**generateBody**](docs/GenerateApi.md#generateBody) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 *GenerateApi* | [**generateMultipart**](docs/GenerateApi.md#generateMultipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
 *RecognizeApi* | [**recognize**](docs/RecognizeApi.md#recognize) | **GET** /barcode/recognize | Recognize a barcode from a file on an Internet server using a GET request with a query string parameter. For recognizing files from your hard drive, use &#x60;recognize-body&#x60; or &#x60;recognize-multipart&#x60; endpoints instead.
@@ -207,6 +220,9 @@ Class | Method | HTTP request | Description
 - [BarcodeImageParams](docs/BarcodeImageParams.md)
 - [BarcodeResponse](docs/BarcodeResponse.md)
 - [BarcodeResponseList](docs/BarcodeResponseList.md)
+- [BatchArchiveFormat](docs/BatchArchiveFormat.md)
+- [BatchGenerateItem](docs/BatchGenerateItem.md)
+- [BatchGenerateRequest](docs/BatchGenerateRequest.md)
 - [Code128EncodeMode](docs/Code128EncodeMode.md)
 - [Code128Params](docs/Code128Params.md)
 - [CodeLocation](docs/CodeLocation.md)

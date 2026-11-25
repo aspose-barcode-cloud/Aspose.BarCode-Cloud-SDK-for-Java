@@ -179,7 +179,9 @@ public enum DecodeBarcodeType {
 
     UPCE("UPCE"),
 
-    VIN("VIN");
+    VIN("VIN"),
+
+    JAPAN_POST("JapanPost");
 
     private final String value;
 
