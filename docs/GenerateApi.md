@@ -5,6 +5,7 @@ All URIs are relative to *<https://api.aspose.cloud/v4.0>*
 Method | HTTP request | Description
 ------ | ------------ | -----------
 [**generate**](GenerateApi.md#generate) | **GET** /barcode/generate/{barcodeType} | Generate a barcode using a GET request with parameters in the route and query string.
+[**generateBatch**](GenerateApi.md#generateBatch) | **POST** /barcode/generate-batch | Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
 [**generateBody**](GenerateApi.md#generateBody) | **POST** /barcode/generate-body | Generate a barcode using a POST request with parameters in the request body in JSON or XML format.
 [**generateMultipart**](GenerateApi.md#generateMultipart) | **POST** /barcode/generate-multipart | Generate a barcode using a POST request with parameters in a multipart form.
 
@@ -19,7 +20,7 @@ Generate a barcode using a GET request with parameters in the route and query st
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcodeType** | [**EncodeBarcodeType**](.md)| Type of barcode to generate. | [enum: QR, AustraliaPost, AustralianPosteParcel, Aztec, Codabar, CodablockF, Code11, Code128, Code16K, Code32, Code39, Code39FullASCII, Code93, DataLogic2of5, DataMatrix, DatabarExpanded, DatabarExpandedStacked, DatabarLimited, DatabarOmniDirectional, DatabarStacked, DatabarStackedOmniDirectional, DatabarTruncated, DeutschePostIdentcode, DeutschePostLeitcode, DotCode, DutchKIX, EAN13, EAN14, EAN8, GS1Aztec, GS1CodablockF, GS1Code128, GS1DataMatrix, GS1DotCode, GS1HanXin, GS1MicroPdf417, GS1QR, HanXin, IATA2of5, ISBN, ISMN, ISSN, ITF14, ITF6, Interleaved2of5, ItalianPost25, MSI, MacroPdf417, Mailmark, Matrix2of5, MaxiCode, MicroPdf417, MicroQR, OPC, OneCode, PZN, PatchCode, Pdf417, Pharmacode, Planet, Postnet, RM4SCC, RectMicroQR, SCC14, SSCC18, SingaporePost, Standard2of5, SwissPostParcel, UPCA, UPCE, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, VIN]
+ **barcodeType** | [**EncodeBarcodeType**](.md)| Type of barcode to generate. | [enum: QR, AustraliaPost, AustralianPosteParcel, Aztec, Codabar, CodablockF, Code11, Code128, Code16K, Code32, Code39, Code39FullASCII, Code93, DataLogic2of5, DataMatrix, DatabarExpanded, DatabarExpandedStacked, DatabarLimited, DatabarOmniDirectional, DatabarStacked, DatabarStackedOmniDirectional, DatabarTruncated, DeutschePostIdentcode, DeutschePostLeitcode, DotCode, DutchKIX, EAN13, EAN14, EAN8, GS1Aztec, GS1CodablockF, GS1Code128, GS1DataMatrix, GS1DotCode, GS1HanXin, GS1MicroPdf417, GS1QR, HanXin, IATA2of5, ISBN, ISMN, ISSN, ITF14, ITF6, Interleaved2of5, ItalianPost25, MSI, MacroPdf417, Mailmark, Matrix2of5, MaxiCode, MicroPdf417, MicroQR, OPC, OneCode, PZN, PatchCode, Pdf417, Pharmacode, Planet, Postnet, RM4SCC, RectMicroQR, SCC14, SSCC18, SingaporePost, Standard2of5, SwissPostParcel, UPCA, UPCE, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, VIN, JapanPost]
  **data** | **String**| String that represents the data to encode. |
  **dataType** | [**EncodeDataType**](.md)| Type of data to encode. Default value: StringData. | [optional] [default to StringData] [enum: StringData, Base64Bytes, HexBytes]
  **imageFormat** | [**BarcodeImageFormat**](.md)| Barcode output image format. Default value: png. | [optional] [default to Png] [enum: Png, Jpeg, Svg, Tiff, Gif]
@@ -55,6 +56,23 @@ Name | Type | Description  | Notes
 
 **File**
 
+## generateBatch
+
+> File generateBatch(batchGenerateRequest)
+
+Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+
+
+### generateBatch parameters
+
+Name | Type | Description  | Notes
+---- | ---- | ------------ | -----
+ **batchGenerateRequest** | [**BatchGenerateRequest**](BatchGenerateRequest.md)| Batch generation request in JSON or XML format. |
+
+### generateBatch return type
+
+**File**
+
 ## generateBody
 
 > File generateBody(generateParams)
@@ -83,7 +101,7 @@ Generate a barcode using a POST request with parameters in a multipart form.
 
 Name | Type | Description  | Notes
 ---- | ---- | ------------ | -----
- **barcodeType** | [**EncodeBarcodeType**](EncodeBarcodeType.md)| See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/ | [enum: QR, AustraliaPost, AustralianPosteParcel, Aztec, Codabar, CodablockF, Code11, Code128, Code16K, Code32, Code39, Code39FullASCII, Code93, DataLogic2of5, DataMatrix, DatabarExpanded, DatabarExpandedStacked, DatabarLimited, DatabarOmniDirectional, DatabarStacked, DatabarStackedOmniDirectional, DatabarTruncated, DeutschePostIdentcode, DeutschePostLeitcode, DotCode, DutchKIX, EAN13, EAN14, EAN8, GS1Aztec, GS1CodablockF, GS1Code128, GS1DataMatrix, GS1DotCode, GS1HanXin, GS1MicroPdf417, GS1QR, HanXin, IATA2of5, ISBN, ISMN, ISSN, ITF14, ITF6, Interleaved2of5, ItalianPost25, MSI, MacroPdf417, Mailmark, Matrix2of5, MaxiCode, MicroPdf417, MicroQR, OPC, OneCode, PZN, PatchCode, Pdf417, Pharmacode, Planet, Postnet, RM4SCC, RectMicroQR, SCC14, SSCC18, SingaporePost, Standard2of5, SwissPostParcel, UPCA, UPCE, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, VIN]
+ **barcodeType** | [**EncodeBarcodeType**](EncodeBarcodeType.md)| See https://reference.aspose.com/barcode/net/aspose.barcode.generation/encodetypes/ | [enum: QR, AustraliaPost, AustralianPosteParcel, Aztec, Codabar, CodablockF, Code11, Code128, Code16K, Code32, Code39, Code39FullASCII, Code93, DataLogic2of5, DataMatrix, DatabarExpanded, DatabarExpandedStacked, DatabarLimited, DatabarOmniDirectional, DatabarStacked, DatabarStackedOmniDirectional, DatabarTruncated, DeutschePostIdentcode, DeutschePostLeitcode, DotCode, DutchKIX, EAN13, EAN14, EAN8, GS1Aztec, GS1CodablockF, GS1Code128, GS1DataMatrix, GS1DotCode, GS1HanXin, GS1MicroPdf417, GS1QR, HanXin, IATA2of5, ISBN, ISMN, ISSN, ITF14, ITF6, Interleaved2of5, ItalianPost25, MSI, MacroPdf417, Mailmark, Matrix2of5, MaxiCode, MicroPdf417, MicroQR, OPC, OneCode, PZN, PatchCode, Pdf417, Pharmacode, Planet, Postnet, RM4SCC, RectMicroQR, SCC14, SSCC18, SingaporePost, Standard2of5, SwissPostParcel, UPCA, UPCE, UpcaGs1Code128Coupon, UpcaGs1DatabarCoupon, VIN, JapanPost]
  **data** | **String**| String that represents the data to encode. |
  **dataType** | [**EncodeDataType**](EncodeDataType.md)| Type of data to encode. Default value: StringData. | [optional] [default to StringData] [enum: StringData, Base64Bytes, HexBytes]
  **imageFormat** | [**BarcodeImageFormat**](BarcodeImageFormat.md)| Barcode output image format. Default value: png. | [optional] [default to Png] [enum: Png, Jpeg, Svg, Tiff, Gif]

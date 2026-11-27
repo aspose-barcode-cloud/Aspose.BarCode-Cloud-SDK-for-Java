@@ -151,5 +151,7 @@
 
 * `VIN` (value: `"VIN"`)
 
+* `JAPAN_POST` (value: `"JapanPost"`)
+
 
 

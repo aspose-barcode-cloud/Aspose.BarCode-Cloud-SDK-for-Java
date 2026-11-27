@@ -411,6 +411,167 @@ public class GenerateApi {
     }
 
     /**
+     * Build call for generateBatch
+     *
+     * @param request See {@link GenerateBatchRequestWrapper}
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    @SuppressWarnings("removal")
+    protected okhttp3.Call generateBatchCall(
+            GenerateBatchRequestWrapper request,
+            final ProgressResponseBody.ProgressListener progressListener,
+            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
+            throws ApiException {
+        Object postBody = request.batchGenerateRequest;
+
+        // create path and map variables
+        String path = "/barcode/generate-batch";
+
+        List<Pair> queryParams = new ArrayList<>();
+        List<Pair> collectionQueryParams = new ArrayList<>();
+        Map<String, String> headerParams = new HashMap<>();
+
+        Map<String, Object> formParams = new HashMap<>();
+        final String[] accepts = {
+            "application/zip",
+            "application/x-tar",
+            "application/gzip",
+            "application/json",
+            "application/xml"
+        };
+        final String accept = apiClient.selectHeaderAccept(accepts);
+        if (accept != null) {
+            headerParams.put("Accept", accept);
+        }
+
+        final String[] contentTypes = {"application/json", "application/xml"};
+        final String contentType = apiClient.selectHeaderContentType(contentTypes);
+        headerParams.put("Content-Type", contentType);
+
+        if (progressListener != null) {
+            apiClient
+                    .getHttpClient()
+                    .networkInterceptors()
+                    .add(
+                            new okhttp3.Interceptor() {
+                                @Override
+                                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain)
+                                        throws IOException {
+                                    okhttp3.Response originalResponse =
+                                            chain.proceed(chain.request());
+                                    return originalResponse
+                                            .newBuilder()
+                                            .body(
+                                                    new ProgressResponseBody(
+                                                            originalResponse.body(),
+                                                            progressListener))
+                                            .build();
+                                }
+                            });
+        }
+
+        return apiClient.buildCall(
+                path,
+                "POST",
+                queryParams,
+                collectionQueryParams,
+                postBody,
+                headerParams,
+                formParams,
+                progressRequestListener);
+    }
+
+    private okhttp3.Call generateBatchValidateBeforeCall(
+            GenerateBatchRequestWrapper request,
+            final ProgressResponseBody.ProgressListener progressListener,
+            final ProgressRequestBody.ProgressRequestListener progressRequestListener)
+            throws ApiException {
+
+        // verify the required parameter 'request.batchGenerateRequest' is set
+        if (request.batchGenerateRequest == null) {
+            throw new ApiException(
+                    "Missing the required parameter 'request.batchGenerateRequest'"
+                            + " when calling generateBatch(...)");
+        }
+
+        okhttp3.Call call = generateBatchCall(request, progressListener, progressRequestListener);
+        return call;
+    }
+
+    /**
+     * Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+     *
+     * @param request See {@link GenerateBatchRequestWrapper}
+     * @return File
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     */
+    public File generateBatch(GenerateBatchRequestWrapper request) throws ApiException {
+        ApiResponse<File> resp = generateBatchWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive.
+     *
+     * @param request See {@link GenerateBatchRequestWrapper}
+     * @return ApiResponse&lt;File&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
+     */
+    public ApiResponse<File> generateBatchWithHttpInfo(GenerateBatchRequestWrapper request)
+            throws ApiException {
+        okhttp3.Call call = generateBatchValidateBeforeCall(request, null, null);
+        Type returnType = new TypeToken<File>() {}.getType();
+        return apiClient.execute(call, returnType);
+    }
+
+    /**
+     * Generate multiple barcodes and return them in a ZIP, TAR, or TAR.GZ archive. (asynchronously)
+     *
+     * @param request See {@link GenerateBatchRequestWrapper}
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body
+     *     object
+     */
+    public okhttp3.Call generateBatchAsync(
+            GenerateBatchRequestWrapper request, final ApiCallback<File> callback)
+            throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener =
+                    new ProgressResponseBody.ProgressListener() {
+                        @Override
+                        public void update(long bytesRead, long contentLength, boolean done) {
+                            callback.onDownloadProgress(bytesRead, contentLength, done);
+                        }
+                    };
+
+            progressRequestListener =
+                    new ProgressRequestBody.ProgressRequestListener() {
+                        @Override
+                        public void onRequestProgress(
+                                long bytesWritten, long contentLength, boolean done) {
+                            callback.onUploadProgress(bytesWritten, contentLength, done);
+                        }
+                    };
+        }
+
+        okhttp3.Call call =
+                generateBatchValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type returnType = new TypeToken<File>() {}.getType();
+        apiClient.executeAsync(call, returnType, callback);
+        return call;
+    }
+
+    /**
      * Build call for generateBody
      *
      * @param request See {@link GenerateBodyRequestWrapper}
